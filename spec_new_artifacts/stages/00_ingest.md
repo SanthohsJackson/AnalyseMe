@@ -1,0 +1,428 @@
+# Stage: Ingestion
+
+**Files found:** 414  
+**Languages:** bash, python
+
+## Entry points
+- cli.py
+- main.py
+- cli/main.py
+
+## Dependency manifests
+- **requirements.txt** (python): 16 deps
+
+## Files
+- `.DS_Store` — other
+- `requirements.txt` — doc
+- `graph.py` — source / python
+- `pyproject.toml` — build
+- `state_schema.py` — source / python
+- `run.sh` — source / bash
+- `cli.py` — source / python
+- `.gitignore` — other
+- `.env` — other
+- `docker-compose.yml` — config
+- `spec.md` — doc
+- `spec_analyse_me.md` — doc
+- `main.py` — source / python
+- `pipeline/vectordb.py` — source / python
+- `pipeline/.DS_Store` — other
+- `pipeline/memory.py` — source / python
+- `pipeline/reflection.py` — source / python
+- `pipeline/cache.py` — source / python
+- `pipeline/__init__.py` — source / python
+- `pipeline/llm.py` — source / python
+- `pipeline/repo_source.py` — source / python
+- `pipeline/model_catalog.py` — source / python
+- `pipeline/rag.py` — source / python
+- `pipeline/indexer.py` — source / python
+- `pipeline/artifacts.py` — source / python
+- `pipeline/parsers/tree_sitter_parser.py` — source / python
+- `pipeline/parsers/__init__.py` — source / python
+- `pipeline/nodes/ingest.py` — source / python
+- `pipeline/nodes/review_completeness.py` — source / python
+- `pipeline/nodes/assemble_document.py` — source / python
+- `pipeline/nodes/review_consistency.py` — source / python
+- `pipeline/nodes/__init__.py` — source / python
+- `pipeline/nodes/validate.py` — source / python
+- `pipeline/nodes/generate_diagram.py` — source / python
+- `pipeline/nodes/synthesize_system.py` — source / python
+- `pipeline/nodes/generate_tests.py` — source / python
+- `pipeline/nodes/analyze_unit.py` — source / python
+- `pipeline/nodes/extract_architecture.py` — source / python
+- `pipeline/nodes/route_units.py` — source / python
+- `pipeline/nodes/reduce_modules.py` — source / python
+- `pipeline/prompts/__init__.py` — source / python
+- `pipeline/prompts/prompts.py` — source / python
+- `spec_artifacts/classes/pipeline__nodes__review_consistency.py.md` — doc
+- `spec_artifacts/classes/cli__main.py__PipelineBuffer.md` — doc
+- `spec_artifacts/classes/pipeline__memory.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes____init__.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__synthesize_system.py.md` — doc
+- `spec_artifacts/classes/cli__utils.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__route_units.py.md` — doc
+- `spec_artifacts/classes/cli.py.md` — doc
+- `spec_artifacts/classes/cli__chat.py.md` — doc
+- `spec_artifacts/classes/state_schema.py.md` — doc
+- `spec_artifacts/classes/pipeline__parsers__tree_sitter_parser.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__extract_architecture.py.md` — doc
+- `spec_artifacts/classes/main.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__generate_tests.py.md` — doc
+- `spec_artifacts/classes/cli____init__.py.md` — doc
+- `spec_artifacts/classes/pipeline__repo_source.py.md` — doc
+- `spec_artifacts/classes/pipeline__llm.py.md` — doc
+- `spec_artifacts/classes/graph.py.md` — doc
+- `spec_artifacts/classes/pipeline__prompts__prompts.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__ingest.py.md` — doc
+- `spec_artifacts/classes/pipeline__rag.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__analyze_unit.py.md` — doc
+- `spec_artifacts/classes/pipeline__artifacts.py.md` — doc
+- `spec_artifacts/classes/pipeline____init__.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__review_completeness.py.md` — doc
+- `spec_artifacts/classes/pipeline__reflection.py.md` — doc
+- `spec_artifacts/classes/pipeline__parsers____init__.py.md` — doc
+- `spec_artifacts/classes/pipeline__indexer.py.md` — doc
+- `spec_artifacts/classes/run.sh.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__assemble_document.py.md` — doc
+- `spec_artifacts/classes/pipeline__model_catalog.py.md` — doc
+- `spec_artifacts/classes/cli__main.py__<module>.md` — doc
+- `spec_artifacts/classes/pipeline__prompts____init__.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__validate.py.md` — doc
+- `spec_artifacts/classes/pipeline__vectordb.py.md` — doc
+- `spec_artifacts/classes/pipeline__nodes__reduce_modules.py.md` — doc
+- `spec_artifacts/stages/01_route_units.md` — doc
+- `spec_artifacts/stages/04_reduce_modules.md` — doc
+- `spec_artifacts/stages/07_generate_tests.md` — doc
+- `spec_artifacts/stages/06_extract_architecture.md` — doc
+- `spec_artifacts/stages/00_ingest.md` — doc
+- `spec_artifacts/stages/08_assemble_document.md` — doc
+- `spec_artifacts/stages/10_validate.md` — doc
+- `spec_artifacts/stages/05_synthesize_system.md` — doc
+- `spec_artifacts/stages/09_review_consistency.md` — doc
+- `spec_artifacts/stages/03_review_completeness.md` — doc
+- `tests/conftest.py` — test / python
+- `tests/.DS_Store` — test
+- `tests/__init__.py` — test / python
+- `tests/test_pipeline.py` — test / python
+- `cli/__init__.py` — source / python
+- `cli/chat.py` — source / python
+- `cli/utils.py` — source / python
+- `cli/main.py` — source / python
+- `cli/static/welcome.txt` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__review_consistency.py.md` — doc
+- `spec_analyse_me_artifacts/classes/cli__main.py__PipelineBuffer.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__memory.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes____init__.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__synthesize_system.py.md` — doc
+- `spec_analyse_me_artifacts/classes/cli__utils.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__route_units.py.md` — doc
+- `spec_analyse_me_artifacts/classes/cli.py.md` — doc
+- `spec_analyse_me_artifacts/classes/cli__chat.py.md` — doc
+- `spec_analyse_me_artifacts/classes/state_schema.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__parsers__tree_sitter_parser.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__extract_architecture.py.md` — doc
+- `spec_analyse_me_artifacts/classes/main.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__generate_tests.py.md` — doc
+- `spec_analyse_me_artifacts/classes/cli____init__.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__repo_source.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__llm.py.md` — doc
+- `spec_analyse_me_artifacts/classes/graph.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__generate_diagram.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__prompts__prompts.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__cache.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__ingest.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__rag.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__analyze_unit.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__artifacts.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline____init__.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__review_completeness.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__reflection.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__parsers____init__.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__indexer.py.md` — doc
+- `spec_analyse_me_artifacts/classes/run.sh.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__assemble_document.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__model_catalog.py.md` — doc
+- `spec_analyse_me_artifacts/classes/cli__main.py__<module>.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__prompts____init__.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__validate.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__vectordb.py.md` — doc
+- `spec_analyse_me_artifacts/classes/pipeline__nodes__reduce_modules.py.md` — doc
+- `spec_analyse_me_artifacts/stages/01_route_units.md` — doc
+- `spec_analyse_me_artifacts/stages/10_review_consistency.md` — doc
+- `spec_analyse_me_artifacts/stages/04_reduce_modules.md` — doc
+- `spec_analyse_me_artifacts/stages/08_generate_diagram.md` — doc
+- `spec_analyse_me_artifacts/stages/07_generate_tests.md` — doc
+- `spec_analyse_me_artifacts/stages/11_validate.md` — doc
+- `spec_analyse_me_artifacts/stages/06_extract_architecture.md` — doc
+- `spec_analyse_me_artifacts/stages/00_ingest.md` — doc
+- `spec_analyse_me_artifacts/stages/05_synthesize_system.md` — doc
+- `spec_analyse_me_artifacts/stages/03_review_completeness.md` — doc
+- `spec_analyse_me_artifacts/stages/09_assemble_document.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.conversations.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__main__src__html-to-docx.d.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__delete-data-source.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__components__form-section.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__hero.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__qdrant.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__recurring-job-rule.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__providers__help-modal-provider.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__events__init.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__components__pagination.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__repositories__project-members.repository.interface.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__components__common__copy-as-json-button.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__hooks__use-debounce.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__default_tools.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__update-data-source.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__list-composio-tools.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ui__textarea.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.projects.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__layout.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__pre_built__index.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__agents__agents.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__scripts__delete_qdrant.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__experimental__chat_widget__tailwind.config.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__next.config.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__components__form-status-button.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__components__ui__section-heading.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__knowledge__granola__index.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__hooks__use-mobile.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__slack__types.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ai-elements__image.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__sources__components__shared.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__use-cases__projects__list-composio-tools.use-case.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__instrumentation-client.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__components__ui__separator.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__policies__usage-quota.policy.interface.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__application__browser-control__service.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__experimental__chat_widget__app__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__manage-triggers__scheduled__[ruleId]__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__experimental__tools_webhook__function_map.py.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__contexts__file-card-context.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__components__label.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__jobs__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__billing__callback__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ai-elements__toolbar.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.users.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__composio-trigger-deployment.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__errors__job-errors.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__utils.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__config__initConfigs.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__experimental__tools_webhook____init__.py.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.recurring-job-rules.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__manage-triggers__triggers__[deploymentId]__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__experimental__chat_widget__app__api__bootstrap.js__route.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__application__assistant__agent.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.scheduled-job-rules.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__revert-to-live-workflow.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__new-chat-link.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__lib__calendar-event.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.api-keys.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__application__browser-skills__index.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__use-cases__projects__list-projects.use-case.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__composio__webhook__handle-composio-webhook-request.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__account__account.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__use-cases__composio-trigger-deployments__list-composio-trigger-types.use-case.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__get-download-url-for-file.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__policies__redis.usage-quota.policy.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__rotate-secret.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__mcp.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__vite.config.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__get-upload-urls-for-files.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__lib__deepgram-listen-url.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__update-draft-workflow.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__shared__prefix-logger.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__layout__components__menu-item.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__application__lib__id-gen.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__runs__lock.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__create-composio-managed-connected-account.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__experimental__chat_widget__app__providers.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__scheduled-job-rule.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__tui__index.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__components__ui__sonner.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__errors__common.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__loading.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__components__menu-item.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__knowledge__limit_event_items.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__lib__utils.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__application__lib__bus.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__update-project-name.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__code-mode__types.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.project-members.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/build-electron.sh.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__conversation.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__app__layout.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__prebuilt-cards__index.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__config__env.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__auth0.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__composio-trigger-type.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__billing__layout.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__list-projects.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__runs__bus.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__services__local.uploads-storage.service.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__components__ui__skeleton.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__components__datasource-icon.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__config__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__components__ui__tabs.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__shared__src__prompt-block.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__knowledge__live-note__bus.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__types__voice_types.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__add-custom-mcp-server.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__billing__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__eslint.config.js.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__markdown-viewer.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__api__widget__v1__session__guest__route.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__components__ui__progress.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__application__assistant__skills__deletion-guardrails__skill.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__services__cache.service.interface.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ui__collapsible.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__providers.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__shared__src__rowboat-account.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__runs__lock.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__scripts__mongodb-ensure-indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__global.d.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ai-elements__panel.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__sync-connected-account.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__application__assistant__skills__deletion-guardrails__skill.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__jobs__[jobId]__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__conversations__create-cached-turn.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__use-cases__projects__update-webhook-url.use-case.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__config__rowboat.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__scripts__mongodb-drop-indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__sources__components__delete.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__api__tmp-images__[id]__route.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__sources__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__components__submit-button.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__api-keys__list-api-keys.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__components__ui__input.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__conversations__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__entities__example.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__shared__src__billing.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__background-tasks__bus.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__user.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__types__api_types.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__shared__src__models.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__lib__utils__time-to-next-minute.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__shared__src__prefix-logger.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__shared__src__inline-task.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__main__src__browser__navigation.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__mongodb.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__code-mode__index.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ui__progress.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.community-assistants.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__components__ui__switch.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__get-composio-toolkit.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__repositories__users.repository.interface.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__analytics__identify.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__lib__google-credentials-store.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.data-source-docs.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__api__me__route.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__recrawl-web-data-source.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__scripts__setup_qdrant.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__hooks__use-click-away.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__api-keys__create-api-key.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__application__lib__bus.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__redis.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__layout.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__copilot__use-parsed-blocks.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__application__lib__random-id.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__lib__copilot__current_workflow.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__manage-triggers__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__lib__relative-time.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__tools__oauth__callback__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__components__ui__horizontal-divider.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__index.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__common__paginated-list.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__hooks__useBilling.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__api__widget__v1__chats__[chatId]__close__route.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__components__ui__collapsible.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.shared-workflows.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__api-keys__delete-api-key.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__application__lib__exec-tool.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__onboarding__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__agent-schedule__repo.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__embedding.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__experimental__chat_widget__app__layout.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__slack__repo.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__remove-custom-mcp-server.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__knowledge__live-note__schedule-utils.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ui__skeleton.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/start.sh.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__assistant-template.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__auth__provider-client-id.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__lib__billing-error.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__components__page-section.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__onboarding__layout.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__hooks__use-mobile.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__loadenv.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.composio-trigger-deployments.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__shared__src__agent.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__config__components__shared-styles.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__services__service_bus.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ai-elements__connection.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__main__src__test-agent.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__services__redis.cache.service.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__styles__pane-effects.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__analytics__installation.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__lib__mention-files.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__api-key.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__use-cases__projects__list-composio-toolkits.use-case.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__sources__new__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__actions__job.actions.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__list-data-sources.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__layout__index.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__knowledge__file-lock.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__manage-triggers__recurring__[ruleId]__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__api__twilio__utils.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__create-project.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__manage-triggers__scheduled__new__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__scripts__job-rules.worker.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__workflow__config_list.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__config__config.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__workflow__loading.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__data-source.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__pre_built__types.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__workflow__error.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__experimental__simulation_runner____init__.py.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__analytics__usage.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__create-custom-connected-account.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__create-data-source.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__events__consumer.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ai-elements__canvas.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__app.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__uploads_s3_client.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__components__ui__page-heading.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__examples__index.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__application__services__uploads-storage.service.interface.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__application__assistant__agent.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__vitest.config.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__components__ai-elements__controls.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__workflow__pane.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__components__ui__page-header.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__python-sdk__src__rowboat____init__.py.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__types__turndown.d.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__delete-project.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__components__ui__textarea.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__scripts__migrate-agents.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboatx__lib__utils.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__types__datasource_types.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__infrastructure__repositories__mongodb.jobs.indexes.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__composio__index.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__toggle-data-source.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__projects__update-webhook-url.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__shared__src__example.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__apps__renderer__src__lib__utils.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__composio-trigger-deployments__list-composio-trigger-types.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__entities__models__project-member.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__feature_flags.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__sources__components__web-recrawl.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__projects__[projectId]__sources__[sourceId]__page.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__code-mode__acp__types.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__src__interface-adapters__controllers__data-sources__delete-doc-from-data-source.controller.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__rowboat__app__lib__components__form-status-button-old.tsx.md` — doc
+- `spec_rowboat_artifacts/classes/apps__cli__src__di__container.ts.md` — doc
+- `spec_rowboat_artifacts/classes/apps__x__packages__core__src__events__producer.ts.md` — doc
+- `spec_rowboat_artifacts/stages/01_route_units.md` — doc
+- `spec_rowboat_artifacts/stages/00_ingest.md` — doc

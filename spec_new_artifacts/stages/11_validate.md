@@ -1,0 +1,73 @@
+# Stage: Validation (coverage critic)
+
+**Result:** GAPS ✗
+
+## Coverage gaps
+- cli/utils.py::ask_skip_tests and cli/utils.py::ask_analysis_passes are missing from the spec document.
+- pipeline/rag.py::__init__ is not documented in the spec document.
+- pipeline/rag.py::add is not documented in the spec document.
+- pipeline/rag.py::retrieve is not documented in the spec document.
+- pipeline/rag.py::select_context is not documented in the spec document.
+- pipeline/nodes/route_units.py::_file_units is not documented in the spec document.
+- pipeline/repo_source.py::_clone_dir_name is not documented in the spec document.
+- pipeline/repo_source.py::_normalize_url is not documented in the spec document.
+- pipeline/nodes/review_consistency.py::_build_ground_truth is not documented in the spec document.
+- pipeline/indexer.py::_chunk is not documented in the spec document.
+- pipeline/indexer.py::_split_spec_sections is not documented in the spec document.
+- pipeline/memory.py::_load_blocks is not documented in the spec document.
+- pipeline/memory.py::_rotate is not documented in the spec document.
+- graph.py::route_to_units is not documented in the spec document.
+- graph.py::should_refine_analysis is not documented in the spec document.
+- graph.py::should_revise is not documented in the spec document.
+- graph.py::build_graph is not documented in the spec document.
+- pipeline/nodes/analyze_unit.py::_get_semaphore is not documented in the spec document.
+- pipeline/nodes/analyze_unit.py::_elide is not documented in the spec document.
+- pipeline/nodes/analyze_unit.py::_select_source is not documented in the spec document.
+- pipeline/nodes/extract_architecture.py::_aggregate_evidence is not documented in the spec document.
+- pipeline/nodes/extract_architecture.py::_summary is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_node_id is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_module_label is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_clean_label is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_module_graph is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_integrations_graph is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_member_name is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_field_type is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_refs is not documented in the spec document.
+- pipeline/nodes/generate_diagram.py::_data_model is not documented in the spec document.
+- pipeline/llm.py::_invoke_with_retry is not documented in the spec document.
+- pipeline/llm.py::_extract_json_from_text is not documented in the spec document.
+- pipeline/llm.py::_try_repair_json is not documented in the spec document.
+- pipeline/llm.py::_call_llm_json_uncached is not documented in the spec document.
+- pipeline/llm.py::_call_llm_structured_uncached is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_get_lang_from_path is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_get_ts_parser is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_extract_go_imports is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_extract_imports_regex is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_count_loc is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_structure is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_empty_structure is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_first_name is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_traverse_for_names is not documented in the spec document.
+- pipeline/parsers/tree_sitter_parser.py::_collect_class_spans is not documented in the spec document.
+- pipeline/nodes/ingest.py::_resolve_dependencies is not documented in the spec document.
+- pipeline/nodes/ingest.py::_exists is not documented in the spec document.
+- pipeline/nodes/ingest.py::_resolve_one is not documented in the spec document.
+- pipeline/nodes/ingest.py::_classify_kind is not documented in the spec document.
+- pipeline/nodes/ingest.py::_extract_imports is not documented in the spec document.
+- pipeline/nodes/ingest.py::_parse_requirements_txt is not documented in the spec document.
+- pipeline/nodes/ingest.py::_parse_package_json is not documented in the spec document.
+- pipeline/nodes/ingest.py::_parse_go_mod is not documented in the spec document.
+- pipeline/nodes/ingest.py::_parse_cargo_toml is not documented in the spec document.
+- pipeline/nodes/ingest.py::_parse_pom_xml is not documented in the spec document.
+- cli/main.py::_default is not documented in the spec document.
+- cli/main.py::_safe_name is not documented in the spec document.
+- cli/main.py::_persist_class_spec is not documented in the spec document.
+- cli/main.py::_persist_stage_doc is not documented in the spec document.
+- cli/main.py::_pause is not documented in the spec document.
+- cli/main.py::_render_doc is not documented in the spec document.
+- cli/chat.py::_format_context is not documented in the spec document.
+- cli/chat.py::_sources_line is not documented in the spec document.
+- cli/utils.py::_valid is not documented in the spec document.
+- Internal dependency relationships are not fully explained, particularly between submodules like pipeline/nodes and pipeline/parsers.
+- Cross-cutting concerns such as logging and concurrency are mentioned but not detailed in terms of implementation specifics.
+- Acceptance tests are not explicitly detailed for each major interface, particularly for internal functions and methods.

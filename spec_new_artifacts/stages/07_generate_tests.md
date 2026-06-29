@@ -1,0 +1,783 @@
+# Stage: Test Generation
+
+**Acceptance tests:** 156
+
+### pipeline/nodes/validate.validate
+- **Given:** a PipelineState with unit analyses and a draft document
+- **When:** validate is called with the PipelineState
+- **Then:** a dictionary containing validation results, gaps, and the final document is returned
+
+### pipeline/nodes/validate.validate
+- **Given:** a PipelineState with unit analyses and a draft document
+- **When:** validate is called and the LLM call fails
+- **Then:** an Exception is raised
+
+### pipeline/reflection.reflect_on_run
+- **Given:** a repository name, a list of programming languages, a unit count, and a list of hallucinations
+- **When:** reflect_on_run is called with these inputs
+- **Then:** a concise reflection string is returned
+
+### pipeline/nodes/synthesize_system.synthesize_system
+- **Given:** a PipelineState with module summaries and a repo path
+- **When:** synthesize_system is called with the PipelineState
+- **Then:** a dictionary containing the system overview is returned
+
+### pipeline/rag.__init__
+- **Given:** no preconditions
+- **When:** an instance of RAGIndex is initialized
+- **Then:** an in-memory vector store for embeddings is initialized
+
+### pipeline/rag.add
+- **Given:** an initialized RAGIndex and a list of (id, text) tuples
+- **When:** add is called with the list of tuples
+- **Then:** the documents are added to the in-memory vector store
+
+### pipeline/rag.retrieve
+- **Given:** an initialized RAGIndex with documents added and a query string
+- **When:** retrieve is called with the query and a number k
+- **Then:** a list of the top-k documents most similar to the query is returned
+
+### pipeline/rag.select_context
+- **Given:** a full text, a list of records, a query, a character budget, and a number k
+- **When:** select_context is called with these inputs
+- **Then:** a tuple containing the context text and a flag indicating if RAG was used is returned
+
+### pipeline/rag.select_context
+- **Given:** embeddings/store are unavailable
+- **When:** select_context is called
+- **Then:** an Exception is raised
+
+### pipeline/cache.enabled
+- **Given:** no preconditions
+- **When:** enabled is called
+- **Then:** a boolean indicating whether the cache is enabled is returned
+
+### pipeline/cache.cache_dir
+- **Given:** no preconditions
+- **When:** cache_dir is called
+- **Then:** a Path to the cache directory is returned and the directory is created if it does not exist
+
+### pipeline/cache.make_key
+- **Given:** a set of string parts
+- **When:** make_key is called with the parts
+- **Then:** a SHA-256 hash of the input parts is returned
+
+### pipeline/cache.get
+- **Given:** a cache key
+- **When:** get is called with the key
+- **Then:** the cached value is returned if available, otherwise None
+
+### pipeline/cache.set
+- **Given:** a cache key and a JSON-serializable value
+- **When:** set is called with the key and value
+- **Then:** the value is stored in the cache under the specified key
+
+### pipeline/cache.clear
+- **Given:** a populated cache
+- **When:** clear is called
+- **Then:** all entries are removed from the cache and the number of files removed is returned
+
+### pipeline/nodes/generate_tests.generate_tests
+- **Given:** a PipelineState with unit analyses
+- **When:** generate_tests is called with the PipelineState
+- **Then:** a dictionary containing generated behavioral tests is returned
+
+### pipeline/nodes/route_units.route_units
+- **Given:** a PipelineState with source files
+- **When:** route_units is called with the PipelineState
+- **Then:** a dictionary containing units to analyze is returned and the number of units queued is printed
+
+### pipeline/repo_source.is_git_url
+- **Given:** a source string
+- **When:** is_git_url is called with the source
+- **Then:** a boolean indicating if the source is a git URL is returned
+
+### pipeline/repo_source.resolve_repo_source
+- **Given:** a valid git URL source
+- **When:** resolve_repo_source is called with the source
+- **Then:** the local directory path for the resolved source is returned
+
+### pipeline/repo_source.resolve_repo_source
+- **Given:** a source that is neither a directory nor a recognized git URL
+- **When:** resolve_repo_source is called with the source
+- **Then:** a ValueError is raised
+
+### pipeline/repo_source.resolve_repo_source
+- **Given:** a valid git URL source and force_fresh is True
+- **When:** resolve_repo_source is called with the source
+- **Then:** the existing directory is removed and a fresh clone is created
+
+### pipeline/nodes/review_consistency.review_consistency
+- **Given:** a PipelineState with a draft document and analyses
+- **When:** review_consistency is called with the PipelineState
+- **Then:** a dictionary containing the results of the consistency review is returned
+
+### pipeline/nodes/review_completeness.review_completeness
+- **Given:** a PipelineState with unit analyses and a repo path
+- **When:** review_completeness is called with the PipelineState
+- **Then:** a dictionary containing analysis questions, completeness status, and pass number is returned
+
+### cli/chat.chat_repl
+- **Given:** an indexed collection name and a number k
+- **When:** chat_repl is called with the collection name and k
+- **Then:** an interactive Q&A loop is run, querying the indexed collection and printing to the console
+
+### pipeline/indexer.index_run
+- **Given:** a repository path, class documentation, and specification text
+- **When:** index_run is called with these inputs
+- **Then:** a tuple containing the collection name and document count is returned
+
+### pipeline/nodes/reduce_modules.reduce_modules
+- **Given:** a PipelineState with unit analyses
+- **When:** reduce_modules is called with the PipelineState
+- **Then:** a dictionary containing module summaries is returned
+
+### pipeline/memory.py.RunMemory
+- **Given:** A valid file path and a maximum entry count are provided.
+- **When:** A RunMemory instance is initialized with these parameters.
+- **Then:** The instance is created successfully with the specified path and max_entries.
+
+### pipeline/memory.py.store_run
+- **Given:** A RunMemory instance is initialized with a valid path and max_entries.
+- **When:** store_run is called with valid repo_path, model, languages, unit_count, hallucinations, and reflection.
+- **Then:** The run entry is appended to the memory log file without raising an OSError.
+
+### pipeline/memory.py._load_blocks
+- **Given:** A memory log file exists with several entries.
+- **When:** _load_blocks is called.
+- **Then:** A list of log entries is returned.
+
+### pipeline/memory.py.get_past_context
+- **Given:** A memory log file contains past run entries for a specific repository.
+- **When:** get_past_context is called with the repository path and a number of entries to retrieve.
+- **Then:** A formatted string of lessons from past runs is returned.
+
+### pipeline/memory.py._rotate
+- **Given:** A list of log entries exceeds the maximum number of entries allowed.
+- **When:** _rotate is called with this list.
+- **Then:** A rotated list of log entries is returned, ensuring the oldest entries are removed to meet the max_entries limit.
+
+### graph.py.route_to_units
+- **Given:** A valid PipelineState is provided.
+- **When:** route_to_units is called with this state.
+- **Then:** A list of Send objects for each unit descriptor is returned.
+
+### graph.py.should_refine_analysis
+- **Given:** A valid PipelineState is provided.
+- **When:** should_refine_analysis is called with this state.
+- **Then:** A list of Send objects for re-analysis or 'reduce_modules' is returned.
+
+### graph.py.should_revise
+- **Given:** A valid PipelineState is provided.
+- **When:** should_revise is called with this state.
+- **Then:** A string 'assemble_document' or 'END' is returned based on validation and review results.
+
+### graph.py.build_graph
+- **Given:** No specific preconditions are required.
+- **When:** build_graph is called with or without a checkpointer.
+- **Then:** A StateGraph is returned.
+
+### pipeline/model_catalog.py.list_providers
+- **Given:** No specific preconditions are required.
+- **When:** list_providers is called.
+- **Then:** A list of tuples containing provider keys and their labels is returned.
+
+### pipeline/model_catalog.py.provider_config
+- **Given:** A valid provider key is provided.
+- **When:** provider_config is called with this provider key.
+- **Then:** A dictionary containing configuration details of the specified provider is returned.
+
+### pipeline/model_catalog.py.get_model_options
+- **Given:** A valid provider key is provided.
+- **When:** get_model_options is called with this provider key.
+- **Then:** A list of tuples containing model options for the specified provider is returned.
+
+### pipeline/model_catalog.py.default_model
+- **Given:** A valid provider key is provided.
+- **When:** default_model is called with this provider key.
+- **Then:** A string representing the default model identifier for the specified provider is returned.
+
+### pipeline/nodes/analyze_unit.py._get_semaphore
+- **Given:** A desired size for the semaphore is provided.
+- **When:** _get_semaphore is called with this size.
+- **Then:** A threading.BoundedSemaphore object with the specified size is returned, and _SEM_STATE is modified to store the semaphore and its size.
+
+### pipeline/nodes/analyze_unit.py._elide
+- **Given:** Source bytes and a list of byte ranges to be replaced are provided.
+- **When:** _elide is called with these inputs.
+- **Then:** A string with the specified byte ranges replaced by a marker is returned.
+
+### pipeline/nodes/analyze_unit.py._select_source
+- **Given:** A unit descriptor containing path and kind information is provided.
+- **When:** _select_source is called with this state.
+- **Then:** A tuple containing a snippet of the source and a focus note is returned.
+
+### pipeline/nodes/analyze_unit.py.analyze_unit
+- **Given:** A unit descriptor with analysis parameters is provided.
+- **When:** analyze_unit is called with this state.
+- **Then:** A dictionary containing unit analyses and any mapping errors is returned.
+
+### pipeline/nodes/extract_architecture.py._aggregate_evidence
+- **Given:** Unit analyses and a dependency manifest are provided.
+- **When:** _aggregate_evidence is called with these inputs.
+- **Then:** A dictionary containing aggregated evidence of cross-cutting concerns is returned.
+
+### pipeline/nodes/extract_architecture.py.extract_architecture
+- **Given:** A valid PipelineState is provided.
+- **When:** extract_architecture is called with this state.
+- **Then:** A dictionary containing data schemas and cross-cutting concerns is returned.
+
+### pipeline/nodes/extract_architecture.py._summary
+- **Given:** A list of strings and a maximum number of items to include in the summary are provided.
+- **When:** _summary is called with these inputs.
+- **Then:** A summarized string is returned.
+
+### cli.py.main
+- **Given:** All required inputs are provided, including repo, out, provider, ollama_url, max_parallelism, analysis_passes, and boolean flags.
+- **When:** main is called with these inputs.
+- **Then:** The codebase is ingested, a language-agnostic reimplementation spec is produced, and the specified side effects occur, such as setting environment variables and writing the specification to a file.
+
+### pipeline/vectordb.py.get_conn_string
+- **Given:** Environment variables for the PostgreSQL connection string are set.
+- **When:** get_conn_string is called.
+- **Then:** A string representing the connection string for the PostgreSQL database is returned.
+
+### pipeline/vectordb.py.get_embeddings
+- **Given:** Environment variables for the embeddings provider are set.
+- **When:** get_embeddings is called.
+- **Then:** An Embeddings object, either OpenAIEmbeddings or OllamaEmbeddings, is returned.
+
+### pipeline/vectordb.py.collection_for
+- **Given:** A valid repository path is provided.
+- **When:** collection_for is called with this path.
+- **Then:** A stable, unique collection name is returned.
+
+### pipeline/vectordb.py.get_store
+- **Given:** A collection name and optional embedding metadata are provided.
+- **When:** get_store is called with these inputs.
+- **Then:** A PGVector store for the collection is returned.
+
+### pipeline/vectordb.py._provider_from_dim
+- **Given:** An embedding dimension is provided.
+- **When:** _provider_from_dim is called with this dimension.
+- **Then:** A dictionary containing provider and model information is returned, or None if no mapping exists.
+
+### pipeline/vectordb.py.collection_embed_config
+- **Given:** A collection name is provided.
+- **When:** collection_embed_config is called with this collection.
+- **Then:** A dictionary containing provider and model information is returned, or None if no configuration is found.
+
+### pipeline/vectordb.py._raw_conn_string
+- **Given:** No specific preconditions are required.
+- **When:** _raw_conn_string is called.
+- **Then:** A string representing the raw connection string for psycopg is returned.
+
+### pipeline/vectordb.py.check_connection
+- **Given:** No specific preconditions are required.
+- **When:** check_connection is called.
+- **Then:** A tuple containing a boolean connection status and a message is returned.
+
+### pipeline/vectordb.list_collections
+- **Given:** The database is accessible and contains collections.
+- **When:** list_collections is called.
+- **Then:** A list of collection names is returned.
+
+### pipeline/vectordb.list_collections
+- **Given:** The database is inaccessible or an error occurs during the operation.
+- **When:** list_collections is called.
+- **Then:** An exception is raised.
+
+### cli/utils.ask_repo_path
+- **Given:** The user is prompted for a repository path or URL.
+- **When:** The user provides a valid repository path or URL.
+- **Then:** The validated repository path or URL is returned.
+
+### cli/utils.ask_repo_path
+- **Given:** The user is prompted for a repository path or URL.
+- **When:** The user does not provide a repository path or URL.
+- **Then:** The program exits.
+
+### cli/utils._valid
+- **Given:** A string input representing a directory path or git URL.
+- **When:** The input is a valid directory path or git URL.
+- **Then:** True is returned.
+
+### cli/utils._valid
+- **Given:** A string input representing a directory path or git URL.
+- **When:** The input is not a valid directory path or git URL.
+- **Then:** An error message is returned.
+
+### cli/utils.ask_output_file
+- **Given:** The user is prompted for the name of the output file.
+- **When:** The user provides a name for the output file.
+- **Then:** The provided name is returned.
+
+### cli/utils.ask_output_file
+- **Given:** The user is prompted for the name of the output file.
+- **When:** The user does not provide a name for the output file.
+- **Then:** The default name 'spec.md' is returned.
+
+### cli/utils.ask_provider
+- **Given:** The user is prompted to select an LLM provider from a list.
+- **When:** The user selects an LLM provider.
+- **Then:** The selected LLM provider is returned.
+
+### cli/utils.ask_model
+- **Given:** The user is prompted to select a model for a given provider.
+- **When:** The user selects a model for the provider.
+- **Then:** The selected model is returned.
+
+### cli/utils.ask_model
+- **Given:** The user is prompted to select a model for a given provider.
+- **When:** The provider's API key is missing.
+- **Then:** A warning is issued.
+
+### cli/utils.ask_ollama_model
+- **Given:** The user is prompted to select an Ollama model.
+- **When:** The user selects an Ollama model.
+- **Then:** The selected Ollama model is returned.
+
+### cli/utils.ask_max_files
+- **Given:** The user is prompted to set a file cap.
+- **When:** The user provides a file cap.
+- **Then:** The provided file cap is returned.
+
+### cli/utils.ask_max_files
+- **Given:** The user is prompted to set a file cap.
+- **When:** The user does not provide a file cap.
+- **Then:** None is returned.
+
+### cli/utils.ask_skip_tests
+- **Given:** The user is prompted to decide whether to skip test files.
+- **When:** The user decides to skip test files.
+- **Then:** True is returned.
+
+### cli/utils.ask_skip_tests
+- **Given:** The user is prompted to decide whether to skip test files.
+- **When:** The user decides not to skip test files.
+- **Then:** False is returned.
+
+### cli/utils.ask_analysis_passes
+- **Given:** The user is prompted to specify the number of analysis refinement passes.
+- **When:** The user specifies a number of analysis refinement passes.
+- **Then:** The specified number of analysis refinement passes is returned.
+
+### state_schema.merge_unit_analyses
+- **Given:** Two lists of unit analyses with some overlapping unit_ids.
+- **When:** merge_unit_analyses is called with these lists.
+- **Then:** A merged list of unit analyses is returned, with the latest analysis replacing any previous one for each unit_id.
+
+### pipeline/nodes/generate_diagram._node_id
+- **Given:** A string representing a name.
+- **When:** The name is converted into a node id.
+- **Then:** A stable, Mermaid-safe node id is returned.
+
+### pipeline/nodes/generate_diagram._module_label
+- **Given:** A string representing a module name.
+- **When:** The module name is labeled.
+- **Then:** A label for the module is returned, using '(root)' for the root module.
+
+### pipeline/nodes/generate_diagram._clean_label
+- **Given:** A string of text and a limit for the label length.
+- **When:** The text is cleaned and truncated.
+- **Then:** A cleaned and possibly truncated label is returned.
+
+### pipeline/nodes/generate_diagram._module_graph
+- **Given:** A list of module objects and a list of entry point paths.
+- **When:** A Mermaid graph for module dependencies is generated.
+- **Then:** A Mermaid graph definition is returned, or None if no modules are provided.
+
+### pipeline/nodes/generate_diagram._integrations_graph
+- **Given:** An object containing external integrations and a system label.
+- **When:** A Mermaid graph for external integrations is generated.
+- **Then:** A Mermaid graph definition is returned, or None if no integrations are provided.
+
+### pipeline/nodes/generate_diagram._member_name
+- **Given:** A string representing a name.
+- **When:** The name is sanitized.
+- **Then:** A sanitized member name is returned.
+
+### pipeline/nodes/generate_diagram._field_type
+- **Given:** A JSON-schema property.
+- **When:** The human-readable type for the property is determined.
+- **Then:** A human-readable type description is returned.
+
+### pipeline/nodes/generate_diagram._refs
+- **Given:** A JSON-schema property.
+- **When:** Schema names referenced by the property are identified.
+- **Then:** A set of schema names referenced by the property is returned.
+
+### pipeline/nodes/generate_diagram._data_model
+- **Given:** A list of data schema objects.
+- **When:** A Mermaid class diagram for the data model is generated.
+- **Then:** A Mermaid class diagram is returned, or None if no schemas are provided.
+
+### pipeline/nodes/generate_diagram.generate_diagram
+- **Given:** a valid PipelineState object containing analysis data
+- **When:** generate_diagram is called with the PipelineState object
+- **Then:** a dictionary containing the architecture diagram is returned
+
+### pipeline/llm.get_provider
+- **Given:** environment variables are set with an active LLM provider key
+- **When:** get_provider is called
+- **Then:** the active LLM provider key is returned as a string
+
+### pipeline/llm.get_model_id
+- **Given:** environment variables or provider defaults are available
+- **When:** get_model_id is called
+- **Then:** the resolved chat model id is returned as a string
+
+### pipeline/llm.get_llm
+- **Given:** a desired temperature setting for the LLM
+- **When:** get_llm is called with the temperature setting
+- **Then:** an LLM client is instantiated and returned based on the provider configuration
+
+### pipeline/llm._invoke_with_retry
+- **Given:** an LLM client, messages to send, and a maximum number of connection retries
+- **When:** _invoke_with_retry is called with these inputs
+- **Then:** the LLM is invoked with retry logic for transient connection errors, and a RuntimeError is raised if the LLM provider is unreachable after retries
+
+### pipeline/llm._extract_json_from_text
+- **Given:** a string containing JSON with markdown code fences
+- **When:** _extract_json_from_text is called with the string
+- **Then:** the raw JSON text is extracted and returned as a string
+
+### pipeline/llm._try_repair_json
+- **Given:** a string containing potentially truncated JSON text
+- **When:** _try_repair_json is called with the string
+- **Then:** the JSON text is repaired by closing open brackets and braces, and returned as a string
+
+### pipeline/llm.call_llm_json
+- **Given:** a prompt string and a maximum number of retries for JSON parsing
+- **When:** call_llm_json is called with these inputs
+- **Then:** a JSON object or array is parsed from the LLM response and returned, or a ValueError is raised if valid JSON cannot be obtained after retries
+
+### pipeline/llm._call_llm_json_uncached
+- **Given:** a prompt string and a maximum number of retries for JSON parsing
+- **When:** _call_llm_json_uncached is called with these inputs
+- **Then:** a JSON object or array is parsed from the LLM response and returned, or a ValueError is raised if valid JSON cannot be obtained after retries
+
+### pipeline/llm.call_llm_structured
+- **Given:** a prompt string, a pydantic model schema for validation, and a maximum number of retries
+- **When:** call_llm_structured is called with these inputs
+- **Then:** a validated instance of the schema is returned, and the result is cached
+
+### pipeline/llm._call_llm_structured_uncached
+- **Given:** a prompt string, a pydantic model schema for validation, and a maximum number of retries
+- **When:** _call_llm_structured_uncached is called with these inputs
+- **Then:** a validated instance of the schema is returned without caching
+
+### pipeline/llm.call_llm_text
+- **Given:** a prompt string
+- **When:** call_llm_text is called with the prompt
+- **Then:** the raw text response from the LLM is returned, and the result is cached
+
+### pipeline/artifacts.render_class_spec
+- **Given:** a UnitAnalysis object
+- **When:** render_class_spec is called with the UnitAnalysis object
+- **Then:** a Markdown representation of the unit analysis is returned as a string
+
+### pipeline/artifacts.render_stage_doc
+- **Given:** a node identifier and a state update dictionary
+- **When:** render_stage_doc is called with these inputs
+- **Then:** a Markdown document summarizing the results of the pipeline stage is returned as a string, or None if not applicable
+
+### pipeline/artifacts.write_text
+- **Given:** a file path and text content
+- **When:** write_text is called with these inputs
+- **Then:** the text content is written to the file at the specified path
+
+### pipeline/nodes/assemble_document._build_inventory
+- **Given:** a valid PipelineState object containing analysis data
+- **When:** _build_inventory is called with the PipelineState object
+- **Then:** a formatted inventory report is returned as a string
+
+### pipeline/nodes/assemble_document._build_interface_index
+- **Given:** a valid PipelineState object containing analysis data
+- **When:** _build_interface_index is called with the PipelineState object
+- **Then:** a formatted index of public interfaces is returned as a string
+
+### pipeline/nodes/assemble_document._insert_diagram
+- **Given:** a document string and a diagram string
+- **When:** _insert_diagram is called with these inputs
+- **Then:** the document with the diagram inserted is returned as a string
+
+### pipeline/nodes/assemble_document.assemble_document
+- **Given:** a valid PipelineState object containing analysis data
+- **When:** assemble_document is called with the PipelineState object
+- **Then:** a dictionary containing the assembled document data is returned
+
+### pipeline/parsers/tree_sitter_parser._get_lang_from_path
+- **Given:** a file path with a known extension
+- **When:** _get_lang_from_path is called with the file path
+- **Then:** the programming language is returned as a string, or None if not found
+
+### pipeline/parsers/tree_sitter_parser._get_ts_parser
+- **Given:** a language string
+- **When:** _get_ts_parser is called with the language
+- **Then:** a Tree-sitter parser for the language is returned, or None if unavailable
+
+### pipeline/parsers/tree_sitter_parser._extract_go_imports
+- **Given:** Go source code containing import paths
+- **When:** _extract_go_imports is called with the source code
+- **Then:** a list of Go import paths is returned
+
+### pipeline/parsers/tree_sitter_parser._extract_imports_regex
+- **Given:** source code and a language string
+- **When:** _extract_imports_regex is called with these inputs
+- **Then:** a list of import paths is returned
+
+### pipeline/parsers/tree_sitter_parser._count_loc
+- **Given:** source code
+- **When:** _count_loc is called with the source code
+- **Then:** the number of non-blank lines is returned as an integer
+
+### pipeline/parsers/tree_sitter_parser._structure
+- **Given:** lists of functions, classes, imports, and a lines of code count
+- **When:** _structure is called with these inputs
+- **Then:** a structured representation of the code is returned as a dictionary
+
+### pipeline/parsers/tree_sitter_parser._empty_structure
+- **Given:** source code
+- **When:** _empty_structure is called with the source code
+- **Then:** an empty structure with the LOC count is returned as a dictionary
+
+### pipeline/parsers/tree_sitter_parser._first_name
+- **Given:** an AST node and source code in bytes
+- **When:** _first_name is called with these inputs
+- **Then:** the name of the declaration is returned as a string, or None
+
+### pipeline/parsers/tree_sitter_parser._traverse_for_names
+- **Given:** an AST node, source code in bytes, and lists to collect function and class names
+- **When:** _traverse_for_names is called with these inputs
+- **Then:** the function and class names are collected in the provided lists
+
+### pipeline/parsers/tree_sitter_parser._collect_class_spans
+- **Given:** an AST node, source code in bytes, a list to collect class spans, and a flag indicating if inside a class
+- **When:** _collect_class_spans is called with these inputs
+- **Then:** the byte and line spans of top-level classes are collected in the provided list
+
+### pipeline/parsers/tree_sitter_parser.extract_class_spans
+- **Given:** a file path
+- **When:** extract_class_spans is called with the file path
+- **Then:** a list of class spans with byte and line information is returned
+
+### pipeline/parsers/tree_sitter_parser.py.parse_file
+- **Given:** a valid file path to a source code file
+- **When:** the parse_file function is called with the file path
+- **Then:** the structure of the file is parsed using Tree-sitter
+
+### pipeline/nodes/ingest.py._resolve_dependencies
+- **Given:** a list of FileMeta objects representing files in a repository
+- **When:** the _resolve_dependencies function is called with the list
+- **Then:** internal dependencies for the files are resolved by matching imports to existing files in the repository
+
+### pipeline/nodes/ingest.py._exists
+- **Given:** a base path and a tuple of file extensions
+- **When:** the _exists function is called with the base path and extensions
+- **Then:** the function returns the resolved path if a file with the given base path and extensions exists, otherwise returns None
+
+### pipeline/nodes/ingest.py._resolve_one
+- **Given:** an import statement, a programming language, and a file directory
+- **When:** the _resolve_one function is called with these inputs
+- **Then:** the function returns the resolved file path if it exists within the repository, otherwise returns None
+
+### pipeline/nodes/ingest.py._classify_kind
+- **Given:** a relative file path and a file extension
+- **When:** the _classify_kind function is called with these inputs
+- **Then:** the function returns the classification of the file kind
+
+### pipeline/nodes/ingest.py._extract_imports
+- **Given:** source code and the programming language of the source code
+- **When:** the _extract_imports function is called with these inputs
+- **Then:** the function returns a list of extracted import statements
+
+### pipeline/nodes/ingest.py._parse_requirements_txt
+- **Given:** a path to a Python requirements.txt file
+- **When:** the _parse_requirements_txt function is called with the path
+- **Then:** the function returns a dictionary containing type and dependencies
+
+### pipeline/nodes/ingest.py._parse_package_json
+- **Given:** a path to a Node.js package.json file
+- **When:** the _parse_package_json function is called with the path
+- **Then:** the function returns a dictionary containing package information and dependencies
+
+### pipeline/nodes/ingest.py._parse_go_mod
+- **Given:** a path to a Go go.mod file
+- **When:** the _parse_go_mod function is called with the path
+- **Then:** the function returns a dictionary containing module name and dependencies
+
+### pipeline/nodes/ingest.py._parse_cargo_toml
+- **Given:** a path to a Rust Cargo.toml file
+- **When:** the _parse_cargo_toml function is called with the path
+- **Then:** the function returns a dictionary containing dependencies
+
+### pipeline/nodes/ingest.py._parse_pom_xml
+- **Given:** a path to a Maven pom.xml file
+- **When:** the _parse_pom_xml function is called with the path
+- **Then:** the function returns a dictionary containing dependencies
+
+### cli/main.py.PipelineBuffer.__init__
+- **Given:** a maximum number of messages to retain
+- **When:** the PipelineBuffer is initialized with the max_messages parameter
+- **Then:** the message buffer and node status tracking are initialized
+
+### cli/main.py.PipelineBuffer.add_message
+- **Given:** a message type and content
+- **When:** the add_message method is called with these inputs
+- **Then:** a timestamped message is appended to the message buffer
+
+### cli/main.py.PipelineBuffer.set_node
+- **Given:** a node identifier and a new status
+- **When:** the set_node method is called with these inputs
+- **Then:** the status of the node is updated and set as the current node if in progress
+
+### cli/main.py.PipelineBuffer.complete_node
+- **Given:** a node identifier
+- **When:** the complete_node method is called with the node identifier
+- **Then:** the node is marked as completed
+
+### cli/main.py.create_layout
+- **Given:** no preconditions
+- **When:** the create_layout function is called
+- **Then:** the function returns the configured layout for the terminal UI
+
+### cli/main.py.get_user_selections
+- **Given:** no preconditions
+- **When:** the get_user_selections function is called
+- **Then:** the function returns a dictionary of user selections for pipeline configuration
+
+### cli/main.py._safe_name
+- **Given:** a unit path
+- **When:** the _safe_name function is called with the path
+- **Then:** the function returns a safe filename derived from the path
+
+### pipeline/nodes/route_units.py::_file_units
+- **Given:** Generate unit descriptors for a source file, splitting large files into class-based units if possible.
+- **When:** _file_units is called with file_meta: object — metadata of the file, repo_path: str — path to the repository, max_parallelism: int — maximum parallelism allowed
+- **Then:** it produces list[dict] — list of unit descriptors
+
+### pipeline/repo_source.py::_clone_dir_name
+- **Given:** Generate a stable directory name from a git URL for cloning purposes.
+- **When:** _clone_dir_name is called with url: str — the git URL to process
+- **Then:** it produces str — a stable, filesystem-safe directory name derived from the URL
+
+### pipeline/repo_source.py::_normalize_url
+- **Given:** Normalize a git URL, converting shorthand forms to full URLs.
+- **When:** _normalize_url is called with url: str — the URL to normalize
+- **Then:** it produces str — the normalized URL
+
+### pipeline/nodes/review_consistency.py::_build_ground_truth
+- **Given:** Compile a compact list of verifiable facts from the pipeline state to ensure document consistency.
+- **When:** _build_ground_truth is called with state: PipelineState — the current pipeline state containing analyses and manifests
+- **Then:** it produces str — a JSON string of verifiable facts
+
+### cli/chat.py::_format_context
+- **Given:** Format document contents with metadata labels for display.
+- **When:** _format_context is called with docs: iterable — collection of document objects with metadata
+- **Then:** it produces str — formatted string of document contents with labels
+
+### cli/chat.py::_sources_line
+- **Given:** Generate a unique list of document tags from metadata for citation.
+- **When:** _sources_line is called with docs: iterable — collection of document objects with metadata
+- **Then:** it produces str — comma-separated list of unique document tags
+
+### pipeline/indexer.py::_chunk
+- **Given:** Split a given text into chunks of a specified size with overlap to facilitate processing without external dependencies.
+- **When:** _chunk is called with text: str — the text to be chunked, size: int — the maximum size of each chunk, overlap: int — the number of overlapping characters between chunks
+- **Then:** it produces list[str] — list of text chunks
+
+### pipeline/indexer.py::_split_spec_sections
+- **Given:** Divide a specification document into sections based on top-level headings for structured processing.
+- **When:** _split_spec_sections is called with spec: str — the specification text to be split
+- **Then:** it produces list[tuple[str, str]] — list of tuples containing section titles and bodies
+
+### state_schema.py::FileKind
+- **Given:** Enumerate different kinds of files in a codebase, such as source, test, config, etc.
+- **When:** FileKind is called with valid inputs
+- **Then:** it produces the documented result
+
+### state_schema.py::FileMeta
+- **Given:** Represent metadata about a file, including its path, language, kind, and dependencies.
+- **When:** FileMeta is called with valid inputs
+- **Then:** it produces the documented result
+
+### state_schema.py::UnitAnalysis
+- **Given:** Represent the output of a map step for an analyzable unit, detailing its purpose and interfaces.
+- **When:** UnitAnalysis is called with valid inputs
+- **Then:** it produces the documented result
+
+### state_schema.py::UnitAnalysisResult
+- **Given:** Capture the intent fields of an analysis unit, separate from deterministic fields.
+- **When:** UnitAnalysisResult is called with valid inputs
+- **Then:** it produces the documented result
+
+### state_schema.py::ModuleSummary
+- **Given:** Summarize a module's responsibilities and public surface after an intermediate reduce step.
+- **When:** ModuleSummary is called with valid inputs
+- **Then:** it produces the documented result
+
+### state_schema.py::DataSchema
+- **Given:** Define a language-neutral type description using JSON schema.
+- **When:** DataSchema is called with valid inputs
+- **Then:** it produces the documented result
+
+### state_schema.py::CrossCutting
+- **Given:** Capture cross-cutting concerns like error handling and logging in the system.
+- **When:** CrossCutting is called with valid inputs
+- **Then:** it produces the documented result
+
+### state_schema.py::BehavioralTest
+- **Given:** Define language-neutral acceptance criteria for reimplementation.
+- **When:** BehavioralTest is called with valid inputs
+- **Then:** it produces the documented result
+
+### state_schema.py::PipelineState
+- **Given:** Represent the state of the pipeline, including inputs, outputs, and analysis progress.
+- **When:** PipelineState is called with valid inputs
+- **Then:** it produces the documented result
+
+### cli/main.py::_default
+- **Given:** Invoke the startup menu if no subcommand is provided.
+- **When:** _default is called with ctx: typer.Context — the context of the Typer application
+- **Then:** it produces the documented result
+
+### cli/main.py::update_display
+- **Given:** Refresh the terminal UI with the latest pipeline progress and messages.
+- **When:** update_display is called with layout: Layout — the layout to update with current information
+- **Then:** it produces the documented result
+
+### cli/main.py::step_box
+- **Given:** Display a step box with a title and hint in the terminal UI.
+- **When:** step_box is called with title: str — the title of the step, hint: str — a hint or description for the step
+- **Then:** it produces the documented result
+
+### cli/main.py::_persist_class_spec
+- **Given:** Store the per-class specification in the buffer and on disk.
+- **When:** _persist_class_spec is called with ua — the unit analysis object
+- **Then:** it produces the documented result
+
+### cli/main.py::_persist_stage_doc
+- **Given:** Store the per-stage documentation in the buffer and on disk.
+- **When:** _persist_stage_doc is called with node_id: str — the identifier of the pipeline stage, update: dict — the update data for the stage
+- **Then:** it produces the documented result
+
+### cli/main.py::_pause
+- **Given:** Pause execution and wait for user input to continue.
+- **When:** _pause is called with message: str — the message to display during the pause
+- **Then:** it produces the documented result
+
+### cli/main.py::_render_doc
+- **Given:** Render a markdown document in the terminal UI.
+- **When:** _render_doc is called with title: str — the title of the document, content: str — the content of the document
+- **Then:** it produces the documented result
+
+### cli/main.py::interactive_viewer
+- **Given:** Allow users to browse through various documents and reports post-pipeline execution.
+- **When:** interactive_viewer is called with final_doc: str — the final document to display
+- **Then:** it produces the documented result
+
+### cli/main.py::run_pipeline
+- **Given:** Execute the pipeline with the given configuration and cache settings.
+- **When:** run_pipeline is called with no_cache: bool — whether to disable caching, clear_cache: bool — whether to clear the cache
+- **Then:** it produces the documented result

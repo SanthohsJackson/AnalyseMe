@@ -1,0 +1,94 @@
+# Stage: Validation (coverage critic)
+
+**Result:** GAPS ✗
+
+## Coverage gaps
+- pipeline/rag.py::__init__ (method) — Not documented in the spec.
+- pipeline/rag.py::add (method) — Not documented in the spec.
+- pipeline/rag.py::retrieve (method) — Not documented in the spec.
+- pipeline/rag.py::select_context (function) — Not documented in the spec.
+- pipeline/nodes/route_units.py::_file_units (function) — Not documented in the spec.
+- pipeline/repo_source.py::is_git_url (function) — Not documented in the spec.
+- pipeline/repo_source.py::_clone_dir_name (function) — Not documented in the spec.
+- pipeline/repo_source.py::_normalize_url (function) — Not documented in the spec.
+- pipeline/repo_source.py::resolve_repo_source (function) — Not documented in the spec.
+- cli/chat.py::_format_context (function) — Not documented in the spec.
+- cli/chat.py::_sources_line (function) — Not documented in the spec.
+- cli/chat.py::chat_repl (function) — Not documented in the spec.
+- pipeline/indexer.py::_chunk (function) — Not documented in the spec.
+- pipeline/indexer.py::_split_spec_sections (function) — Not documented in the spec.
+- pipeline/memory.py::__init__ (method) — Not documented in the spec.
+- pipeline/memory.py::_load_blocks (method) — Not documented in the spec.
+- pipeline/memory.py::_rotate (method) — Not documented in the spec.
+- graph.py::route_to_units (function) — Not documented in the spec.
+- graph.py::should_refine_analysis (function) — Not documented in the spec.
+- graph.py::should_revise (function) — Not documented in the spec.
+- graph.py::build_graph (function) — Not documented in the spec.
+- pipeline/nodes/analyze_unit.py::_get_semaphore (function) — Not documented in the spec.
+- pipeline/nodes/analyze_unit.py::_elide (function) — Not documented in the spec.
+- pipeline/nodes/analyze_unit.py::_select_source (function) — Not documented in the spec.
+- pipeline/nodes/extract_architecture.py::_summary (function) — Not documented in the spec.
+- pipeline/vectordb.py::_provider_from_dim (function) — Not documented in the spec.
+- pipeline/vectordb.py::_raw_conn_string (function) — Not documented in the spec.
+- cli/utils.py::_valid (function) — Not documented in the spec.
+- state_schema.py::merge_unit_analyses (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_node_id (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_module_label (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_clean_label (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_module_graph (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_integrations_graph (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_member_name (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_field_type (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_refs (function) — Not documented in the spec.
+- pipeline/nodes/generate_diagram.py::_data_model (function) — Not documented in the spec.
+- pipeline/llm.py::_invoke_with_retry (function) — Not documented in the spec.
+- pipeline/llm.py::_extract_json_from_text (function) — Not documented in the spec.
+- pipeline/llm.py::_try_repair_json (function) — Not documented in the spec.
+- pipeline/llm.py::_call_llm_json_uncached (function) — Not documented in the spec.
+- pipeline/llm.py::_call_llm_structured_uncached (function) — Not documented in the spec.
+- pipeline/nodes/review_consistency.py::_build_ground_truth (function) — Not documented in the spec.
+- pipeline/nodes/review_consistency.py::_dep_name (function) — Not documented in the spec.
+- pipeline/nodes/review_consistency.py::_norm (function) — Not documented in the spec.
+- pipeline/nodes/review_consistency.py::_is_symbol_like (function) — Not documented in the spec.
+- pipeline/nodes/review_consistency.py::_collect_known_symbols (function) — Not documented in the spec.
+- pipeline/nodes/review_consistency.py::_filter_findings (function) — Not documented in the spec.
+- pipeline/nodes/review_consistency.py::_strip_deterministic (function) — Not documented in the spec.
+- pipeline/nodes/assemble_document.py::_build_inventory (function) — Not documented in the spec.
+- pipeline/nodes/assemble_document.py::_build_interface_index (function) — Not documented in the spec.
+- pipeline/nodes/assemble_document.py::_insert_diagram (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_get_lang_from_path (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_get_ts_parser (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_extract_go_imports (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_extract_imports_regex (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_count_loc (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_empty_structure (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_first_name (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_traverse_for_names (function) — Not documented in the spec.
+- pipeline/parsers/tree_sitter_parser.py::_collect_class_spans (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_resolve_dependencies (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_exists (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_resolve_one (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_classify_kind (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_extract_imports (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_parse_requirements_txt (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_parse_package_json (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_parse_go_mod (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_parse_cargo_toml (function) — Not documented in the spec.
+- pipeline/nodes/ingest.py::_parse_pom_xml (function) — Not documented in the spec.
+- cli/main.py::__init__ (method) — Not documented in the spec.
+- cli/main.py::add_message (method) — Not documented in the spec.
+- cli/main.py::set_node (method) — Not documented in the spec.
+- cli/main.py::complete_node (method) — Not documented in the spec.
+- cli/main.py::_default (function) — Not documented in the spec.
+- cli/main.py::create_layout (function) — Not documented in the spec.
+- cli/main.py::update_display (function) — Not documented in the spec.
+- cli/main.py::get_user_selections (function) — Not documented in the spec.
+- cli/main.py::step_box (function) — Not documented in the spec.
+- cli/main.py::_safe_name (function) — Not documented in the spec.
+- cli/main.py::_persist_class_spec (function) — Not documented in the spec.
+- cli/main.py::_persist_stage_doc (function) — Not documented in the spec.
+- cli/main.py::_pause (function) — Not documented in the spec.
+- cli/main.py::run_pipeline (function) — Not documented in the spec.
+- Internal dependency relationships are not fully explained, particularly between 'pipeline', 'pipeline/nodes', and 'pipeline/parsers'.
+- Cross-cutting concerns like logging and concurrency are mentioned but not comprehensively covered.
+- Acceptance tests are missing for several interfaces, particularly those in 'pipeline/rag.py', 'pipeline/repo_source.py', and 'pipeline/memory.py'.

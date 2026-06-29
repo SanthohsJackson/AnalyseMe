@@ -1,0 +1,1218 @@
+# Stage: Ingestion
+
+**Files found:** 1182  
+**Languages:** bash, javascript, python, typescript
+
+## Entry points
+- apps/experimental/tools_webhook/app.py
+- apps/cli/src/examples/index.ts
+- apps/cli/src/application/assistant/skills/index.ts
+- apps/rowboat/app/lib/prebuilt-cards/index.ts
+- apps/x/packages/core/src/index.ts
+- apps/x/packages/core/src/code-mode/index.ts
+- apps/x/packages/core/src/pre_built/index.ts
+- apps/x/packages/core/src/knowledge/granola/index.ts
+- apps/x/packages/core/src/application/assistant/skills/index.ts
+- apps/x/packages/core/src/application/browser-skills/index.ts
+- apps/x/packages/core/src/composio/index.ts
+- apps/x/packages/shared/src/index.ts
+- apps/x/apps/main/src/main.ts
+
+## Dependency manifests
+- **apps/experimental/chat_widget/package.json** (node): 9 deps
+- **apps/experimental/simulation_runner/requirements.txt** (python): 29 deps
+- **apps/experimental/tools_webhook/requirements.txt** (python): 12 deps
+- **apps/python-sdk/requirements.txt** (python): 9 deps
+- **apps/cli/package.json** (node): 29 deps
+- **apps/rowboat/package.json** (node): 51 deps
+- **apps/x/package.json** (node): 0 deps
+- **apps/x/packages/core/package.json** (node): 36 deps
+- **apps/x/packages/shared/package.json** (node): 1 deps
+- **apps/x/apps/renderer/package.json** (node): 62 deps
+- **apps/x/apps/main/package.json** (node): 13 deps
+- **apps/x/apps/preload/package.json** (node): 1 deps
+- **apps/rowboatx/package.json** (node): 41 deps
+
+## Files
+- `LICENSE` — other
+- `README.md` — doc
+- `build-electron.sh` — source / bash
+- `Dockerfile.qdrant` — other
+- `google-setup.md` — doc
+- `.gitignore` — other
+- `.gitattributes` — other
+- `docker-compose.yml` — config
+- `.env.example` — other
+- `start.sh` — source / bash
+- `CLAUDE.md` — doc
+- `assets/mcp-import.png` — other
+- `assets/banner.png` — other
+- `assets/rb-logo.png` — other
+- `assets/ui_revamp_screenshot.png` — other
+- `apps/experimental/chat_widget/postcss.config.mjs` — other
+- `apps/experimental/chat_widget/Dockerfile` — build
+- `apps/experimental/chat_widget/next.config.mjs` — other
+- `apps/experimental/chat_widget/README.md` — doc
+- `apps/experimental/chat_widget/tailwind.config.ts` — source / typescript
+- `apps/experimental/chat_widget/.dockerignore` — other
+- `apps/experimental/chat_widget/.gitignore` — other
+- `apps/experimental/chat_widget/package-lock.json` — config
+- `apps/experimental/chat_widget/package.json` — build
+- `apps/experimental/chat_widget/tsconfig.json` — config
+- `apps/experimental/chat_widget/.eslintrc.json` — config
+- `apps/experimental/chat_widget/app/markdown-content.tsx` — source / typescript
+- `apps/experimental/chat_widget/app/app.tsx` — source / typescript
+- `apps/experimental/chat_widget/app/favicon.ico` — other
+- `apps/experimental/chat_widget/app/layout.tsx` — source / typescript
+- `apps/experimental/chat_widget/app/page.tsx` — source / typescript
+- `apps/experimental/chat_widget/app/globals.css` — other
+- `apps/experimental/chat_widget/app/providers.tsx` — source / typescript
+- `apps/experimental/chat_widget/app/api/bootstrap.js/route.ts` — source / typescript
+- `apps/experimental/chat_widget/app/fonts/GeistMonoVF.woff` — other
+- `apps/experimental/chat_widget/app/fonts/GeistVF.woff` — other
+- `apps/experimental/chat_widget/public/file.svg` — other
+- `apps/experimental/chat_widget/public/bootstrap.template.js` — source / javascript
+- `apps/experimental/chat_widget/public/vercel.svg` — other
+- `apps/experimental/chat_widget/public/next.svg` — other
+- `apps/experimental/chat_widget/public/globe.svg` — other
+- `apps/experimental/chat_widget/public/window.svg` — other
+- `apps/experimental/simulation_runner/simulation.py` — source / python
+- `apps/experimental/simulation_runner/service.py` — source / python
+- `apps/experimental/simulation_runner/db.py` — source / python
+- `apps/experimental/simulation_runner/requirements.txt` — doc
+- `apps/experimental/simulation_runner/Dockerfile` — build
+- `apps/experimental/simulation_runner/scenario_types.py` — source / python
+- `apps/experimental/simulation_runner/__init__.py` — source / python
+- `apps/experimental/tools_webhook/requirements.txt` — doc
+- `apps/experimental/tools_webhook/function_map.py` — source / python
+- `apps/experimental/tools_webhook/Dockerfile` — build
+- `apps/experimental/tools_webhook/__init__.py` — source / python
+- `apps/experimental/tools_webhook/app.py` — source / python
+- `apps/experimental/tools_webhook/tool_caller.py` — source / python
+- `apps/experimental/tools_webhook/tests/__init__.py` — test / python
+- `apps/experimental/tools_webhook/tests/test_app.py` — test / python
+- `apps/experimental/tools_webhook/tests/test_tool_caller.py` — test / python
+- `apps/python-sdk/requirements.txt` — doc
+- `apps/python-sdk/pyproject.toml` — build
+- `apps/python-sdk/README.md` — doc
+- `apps/python-sdk/.gitignore` — other
+- `apps/python-sdk/src/rowboat/client.py` — source / python
+- `apps/python-sdk/src/rowboat/__init__.py` — source / python
+- `apps/python-sdk/src/rowboat/schema.py` — source / python
+- `apps/docs/favicon.ico` — other
+- `apps/docs/docs.json` — config
+- `apps/docs/.gitignore` — other
+- `apps/docs/docs/development/contribution-guide.mdx` — other
+- `apps/docs/docs/development/roadmap.mdx` — other
+- `apps/docs/docs/img/update-agent-manual.png` — other
+- `apps/docs/docs/img/update-agent-copilot.png` — other
+- `apps/docs/docs/img/jobs-ui.png` — other
+- `apps/docs/docs/img/Intro-Video.gif` — other
+- `apps/docs/docs/img/triggers-recurring-ui.png` — other
+- `apps/docs/docs/img/dev-config.png` — other
+- `apps/docs/docs/img/prod-deploy.png` — other
+- `apps/docs/docs/img/rag-adding-data.png` — other
+- `apps/docs/docs/img/conversations-ui.png` — other
+- `apps/docs/docs/img/conversations-inside-run.png` — other
+- `apps/docs/docs/img/triggers-onetime-ui.png` — other
+- `apps/docs/docs/img/contribution-guide-hero.png` — other
+- `apps/docs/docs/img/agent-instruction.png` — other
+- `apps/docs/docs/img/tools-ui.png` — other
+- `apps/docs/docs/img/create-agents-delivery.png` — other
+- `apps/docs/docs/img/jobs-inside-run.png` — other
+- `apps/docs/docs/img/triggers-external-ui.png` — other
+- `apps/docs/docs/img/google-setup/04-add-test-users.png` — other
+- `apps/docs/docs/img/google-setup/01-select-project-dropdown.png` — other
+- `apps/docs/docs/img/google-setup/02-enable-api.png` — other
+- `apps/docs/docs/img/google-setup/05-create-oauth-client-uwp.png` — other
+- `apps/docs/docs/img/google-setup/07-enter-credentials.png` — other
+- `apps/docs/docs/img/google-setup/06-copy-client-id.png` — other
+- `apps/docs/docs/img/google-setup/03-oauth-consent-screen.png` — other
+- `apps/docs/docs/videos/Intro-Video.gif` — other
+- `apps/docs/docs/videos/intro.mp4` — other
+- `apps/docs/docs/getting-started/introduction.mdx` — other
+- `apps/docs/docs/getting-started/quickstart.mdx` — other
+- `apps/docs/docs/getting-started/license.mdx` — other
+- `apps/cli/todo.md` — doc
+- `apps/cli/.gitignore` — other
+- `apps/cli/package-lock.json` — config
+- `apps/cli/package.json` — build
+- `apps/cli/tsconfig.json` — config
+- `apps/cli/bin/app.js` — source / javascript
+- `apps/cli/src/app.ts` — source / typescript
+- `apps/cli/src/server.ts` — source / typescript
+- `apps/cli/src/di/container.ts` — source / typescript
+- `apps/cli/src/config/security.ts` — source / typescript
+- `apps/cli/src/config/config.ts` — source / typescript
+- `apps/cli/src/tui/index.tsx` — source / typescript
+- `apps/cli/src/tui/api.ts` — source / typescript
+- `apps/cli/src/tui/ui.tsx` — source / typescript
+- `apps/cli/src/agents/repo.ts` — source / typescript
+- `apps/cli/src/agents/agents.ts` — source / typescript
+- `apps/cli/src/agents/runtime.ts` — source / typescript
+- `apps/cli/src/mcp/schema.ts` — source / typescript
+- `apps/cli/src/mcp/repo.ts` — source / typescript
+- `apps/cli/src/mcp/mcp.ts` — source / typescript
+- `apps/cli/src/shared/prefix-logger.ts` — source / typescript
+- `apps/cli/src/models/repo.ts` — source / typescript
+- `apps/cli/src/models/models.ts` — source / typescript
+- `apps/cli/src/knowledge/sync_calendar.ts` — source / typescript
+- `apps/cli/src/knowledge/sync_gmail.ts` — source / typescript
+- `apps/cli/src/examples/twitter-podcast.json` — config
+- `apps/cli/src/examples/index.ts` — source / typescript
+- `apps/cli/src/scripts/migrate-agents.ts` — source / typescript
+- `apps/cli/src/application/assistant/agent.ts` — source / typescript
+- `apps/cli/src/application/assistant/runtime-context.ts` — source / typescript
+- `apps/cli/src/application/assistant/instructions.ts` — source / typescript
+- `apps/cli/src/application/assistant/skills/index.ts` — source / typescript
+- `apps/cli/src/application/assistant/skills/workflow-authoring/skill.ts` — source / typescript
+- `apps/cli/src/application/assistant/skills/deletion-guardrails/skill.ts` — source / typescript
+- `apps/cli/src/application/assistant/skills/workflow-run-ops/skill.ts` — source / typescript
+- `apps/cli/src/application/assistant/skills/builtin-tools/skill.ts` — source / typescript
+- `apps/cli/src/application/assistant/skills/mcp-integration/skill.ts` — source / typescript
+- `apps/cli/src/application/lib/stream-renderer.ts` — source / typescript
+- `apps/cli/src/application/lib/exec-tool.ts` — source / typescript
+- `apps/cli/src/application/lib/command-executor.ts` — source / typescript
+- `apps/cli/src/application/lib/id-gen.ts` — source / typescript
+- `apps/cli/src/application/lib/bus.ts` — source / typescript
+- `apps/cli/src/application/lib/random-id.ts` — source / typescript
+- `apps/cli/src/application/lib/builtin-tools.ts` — source / typescript
+- `apps/cli/src/application/lib/message-queue.ts` — source / typescript
+- `apps/cli/src/runs/runs.ts` — source / typescript
+- `apps/cli/src/runs/repo.ts` — source / typescript
+- `apps/cli/src/runs/lock.ts` — source / typescript
+- `apps/cli/src/entities/llm-step-events.ts` — source / typescript
+- `apps/cli/src/entities/example.ts` — source / typescript
+- `apps/cli/src/entities/run-events.ts` — source / typescript
+- `apps/cli/src/entities/message.ts` — source / typescript
+- `apps/rowboat/middleware.ts` — source / typescript
+- `apps/rowboat/postcss.config.mjs` — other
+- `apps/rowboat/Dockerfile` — build
+- `apps/rowboat/next.config.mjs` — other
+- `apps/rowboat/README.md` — doc
+- `apps/rowboat/.dockerignore` — other
+- `apps/rowboat/.gitignore` — other
+- `apps/rowboat/package-lock.json` — config
+- `apps/rowboat/package.json` — build
+- `apps/rowboat/instrumentation-client.ts` — source / typescript
+- `apps/rowboat/scripts.Dockerfile` — other
+- `apps/rowboat/components.json` — config
+- `apps/rowboat/tsconfig.json` — config
+- `apps/rowboat/.eslintrc.json` — config
+- `apps/rowboat/di/container.ts` — source / typescript
+- `apps/rowboat/app/favicon-16x16.png` — other
+- `apps/rowboat/app/app.tsx` — source / typescript
+- `apps/rowboat/app/safari-pinned-tab.svg` — other
+- `apps/rowboat/app/favicon.ico` — other
+- `apps/rowboat/app/hero.ts` — source / typescript
+- `apps/rowboat/app/android-chrome-192x192.png` — other
+- `apps/rowboat/app/apple-touch-icon.png` — other
+- `apps/rowboat/app/android-chrome-512x512.png` — other
+- `apps/rowboat/app/site.webmanifest` — other
+- `apps/rowboat/app/layout.tsx` — source / typescript
+- `apps/rowboat/app/loading.tsx` — source / typescript
+- `apps/rowboat/app/page.tsx` — source / typescript
+- `apps/rowboat/app/new-chat-link.tsx` — source / typescript
+- `apps/rowboat/app/globals.css` — other
+- `apps/rowboat/app/browserconfig.xml` — other
+- `apps/rowboat/app/favicon-32x32.png` — other
+- `apps/rowboat/app/providers.tsx` — source / typescript
+- `apps/rowboat/app/projects/app.tsx` — source / typescript
+- `apps/rowboat/app/projects/layout.tsx` — source / typescript
+- `apps/rowboat/app/projects/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/layout.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/oauth/callback/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/AddWebhookTool.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/ToolsConfig.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/CustomMcpServer.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/SelectComposioToolkit.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/WebhookConfig.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/ComposioToolsPanel.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/ServerCard.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/ToolkitCard.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/McpToolsPanel.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/ToolkitAuthModal.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/tools/components/MCPServersCommon.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/playground/app.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/playground/copilot-prompts.ts` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/playground/components/feedback-modal.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/playground/components/messages.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/playground/components/chat.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/playground/components/profile-context-box.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/copilot/app.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/copilot/example.md` — doc
+- `apps/rowboat/app/projects/[projectId]/copilot/use-copilot.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/copilot/use-parsed-blocks.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/copilot/components/TriggerSetupModal.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/copilot/components/actions.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/copilot/components/messages.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/copilot/components/use-trigger-actions.ts` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/config/app.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/config/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/config/components/shared-styles.ts` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/config/components/project.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/config/components/voice.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/triggers/[deploymentId]/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/components/recurring-job-rule-view.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/components/job-rules-tabs.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/components/create-recurring-job-rule-form.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/components/recurring-job-rules-list.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/components/triggers-tab.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/components/composio-trigger-deployment-view.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/scheduled/[ruleId]/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/scheduled/components/scheduled-job-rules-list.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/scheduled/components/create-scheduled-job-rule-form.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/scheduled/components/scheduled-job-rule-view.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/scheduled/new/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/recurring/[ruleId]/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/manage-triggers/recurring/new/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/conversations/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/conversations/components/conversations-list.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/conversations/components/conversation-view.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/conversations/[conversationId]/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/app.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/config_list.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/preview-modal.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/pane.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/entity_list.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/error.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/loading.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/workflow_editor.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/trigger-transform.ts` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/components/TopBar.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/components/DataSourcesModal.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/components/ToolsModal.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/components/TriggerConfigForm.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/workflow/components/ComposioTriggerTypesPanel.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/text-source.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/web-recrawl.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/shared.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/section.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/sources-list.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/source-status.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/delete.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/self-updating-source-status.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/files-source.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/scrape-source.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/components/toggle-source.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/new/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/new/form.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/[sourceId]/source-page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/sources/[sourceId]/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/jobs/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/jobs/components/jobs-list.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/jobs/components/job-view.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/jobs/[jobId]/page.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/entities/agent_config.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/entities/datasource_config.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/entities/pipeline_config.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/entities/tool_config.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/entities/prompt_config.tsx` — source / typescript
+- `apps/rowboat/app/projects/[projectId]/entities/AgentGraphVisualizer.tsx` — source / typescript
+- `apps/rowboat/app/projects/layout/index.tsx` — source / typescript
+- `apps/rowboat/app/projects/layout/nav.tsx` — source / typescript
+- `apps/rowboat/app/projects/layout/menu.tsx` — source / typescript
+- `apps/rowboat/app/projects/layout/components/menu-item.tsx` — source / typescript
+- `apps/rowboat/app/projects/layout/components/sidebar.tsx` — source / typescript
+- `apps/rowboat/app/projects/layout/components/app-layout.tsx` — source / typescript
+- `apps/rowboat/app/projects/components/project-list.tsx` — source / typescript
+- `apps/rowboat/app/projects/components/create-project.tsx` — source / typescript
+- `apps/rowboat/app/projects/components/search-input.tsx` — source / typescript
+- `apps/rowboat/app/projects/components/templates-section.tsx` — source / typescript
+- `apps/rowboat/app/projects/components/search-projects.tsx` — source / typescript
+- `apps/rowboat/app/projects/components/submit-button.tsx` — source / typescript
+- `apps/rowboat/app/projects/components/build-assistant-section.tsx` — source / typescript
+- `apps/rowboat/app/projects/components/custom-prompt-card.tsx` — source / typescript
+- `apps/rowboat/app/projects/lib/project-creation-utils.ts` — source / typescript
+- `apps/rowboat/app/providers/theme-provider.tsx` — source / typescript
+- `apps/rowboat/app/providers/help-modal-provider.tsx` — source / typescript
+- `apps/rowboat/app/styles/pane-effects.ts` — source / typescript
+- `apps/rowboat/app/styles/design-tokens.ts` — source / typescript
+- `apps/rowboat/app/styles/quill-mentions.css` — other
+- `apps/rowboat/app/components/ui/textarea-with-send.tsx` — source / typescript
+- `apps/rowboat/app/scripts/mongodb-ensure-indexes.ts` — source / typescript
+- `apps/rowboat/app/scripts/setup_qdrant.ts` — source / typescript
+- `apps/rowboat/app/scripts/job-rules.worker.ts` — source / typescript
+- `apps/rowboat/app/scripts/jobs-worker.ts` — source / typescript
+- `apps/rowboat/app/scripts/mongodb-drop-indexes.ts` — source / typescript
+- `apps/rowboat/app/scripts/delete_qdrant.ts` — source / typescript
+- `apps/rowboat/app/scripts/rag-worker.ts` — source / typescript
+- `apps/rowboat/app/actions/shared-workflow.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/custom-mcp-server.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/data-source.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/auth.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/project.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/conversation.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/assistant-templates.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/twilio.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/composio.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/copilot.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/job.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/playground-chat.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/scheduled-job-rules.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/billing.actions.ts` — source / typescript
+- `apps/rowboat/app/actions/recurring-job-rules.actions.ts` — source / typescript
+- `apps/rowboat/app/lib/auth0.ts` — source / typescript
+- `apps/rowboat/app/lib/project_templates.ts` — source / typescript
+- `apps/rowboat/app/lib/default_tools.ts` — source / typescript
+- `apps/rowboat/app/lib/loadenv.ts` — source / typescript
+- `apps/rowboat/app/lib/mcp.ts` — source / typescript
+- `apps/rowboat/app/lib/redis.ts` — source / typescript
+- `apps/rowboat/app/lib/utils.ts` — source / typescript
+- `apps/rowboat/app/lib/feature_flags.ts` — source / typescript
+- `apps/rowboat/app/lib/mongodb.ts` — source / typescript
+- `apps/rowboat/app/lib/assistant_templates_seed.ts` — source / typescript
+- `apps/rowboat/app/lib/qdrant.ts` — source / typescript
+- `apps/rowboat/app/lib/embedding.ts` — source / typescript
+- `apps/rowboat/app/lib/uploads_s3_client.ts` — source / typescript
+- `apps/rowboat/app/lib/billing.ts` — source / typescript
+- `apps/rowboat/app/lib/client_utils.ts` — source / typescript
+- `apps/rowboat/app/lib/auth.ts` — source / typescript
+- `apps/rowboat/app/lib/types/datasource_types.ts` — source / typescript
+- `apps/rowboat/app/lib/types/voice_types.ts` — source / typescript
+- `apps/rowboat/app/lib/types/types.ts` — source / typescript
+- `apps/rowboat/app/lib/types/billing_types.ts` — source / typescript
+- `apps/rowboat/app/lib/types/workflow_types.ts` — source / typescript
+- `apps/rowboat/app/lib/types/api_types.ts` — source / typescript
+- `apps/rowboat/app/lib/components/page-section.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/markdown-content.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/pagination.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/reason-badge.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/mentions_editor.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/menu-item.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/form-section.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/message-display.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/datasource-icon.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/structured-list.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/typewriter.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/mentions-editor.css` — other
+- `apps/rowboat/app/lib/components/structured-panel.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/label.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/input-field.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/user_button.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/dropdown.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/icons.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/form-status-button-old.tsx` — source / typescript
+- `apps/rowboat/app/lib/components/atmentions.ts` — source / typescript
+- `apps/rowboat/app/lib/components/form-status-button.tsx` — source / typescript
+- `apps/rowboat/app/lib/prebuilt-cards/meeting-prep-assistant.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/reddit-on-slack.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/github-data-to-spreadsheet.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/README.md` — doc
+- `apps/rowboat/app/lib/prebuilt-cards/twitter-sentiment.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/eisenhower-email-organizer.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/github-issue-to-slack.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/tweet-assistant.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/index.ts` — source / typescript
+- `apps/rowboat/app/lib/prebuilt-cards/github-pr-to-slack.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/interview-scheduler.json` — config
+- `apps/rowboat/app/lib/prebuilt-cards/customer-support.json` — config
+- `apps/rowboat/app/api/v1/[projectId]/chat/route.ts` — source / typescript
+- `apps/rowboat/app/api/copilot-stream-response/[streamId]/route.ts` — source / typescript
+- `apps/rowboat/app/api/widget/v1/utils.ts` — source / typescript
+- `apps/rowboat/app/api/widget/v1/chats/route.ts` — source / typescript
+- `apps/rowboat/app/api/widget/v1/chats/[chatId]/route.ts` — source / typescript
+- `apps/rowboat/app/api/widget/v1/chats/[chatId]/messages/route.ts` — source / typescript
+- `apps/rowboat/app/api/widget/v1/chats/[chatId]/close/route.ts` — source / typescript
+- `apps/rowboat/app/api/widget/v1/chats/[chatId]/turn/route.ts` — source / typescript
+- `apps/rowboat/app/api/widget/v1/session/user/route.ts` — source / typescript
+- `apps/rowboat/app/api/widget/v1/session/guest/route.ts` — source / typescript
+- `apps/rowboat/app/api/uploads/[fileId]/route.ts` — source / typescript
+- `apps/rowboat/app/api/generated-images/[id]/route.ts` — source / typescript
+- `apps/rowboat/app/api/stream-response/[streamId]/route.ts` — source / typescript
+- `apps/rowboat/app/api/tmp-images/[id]/route.ts` — source / typescript
+- `apps/rowboat/app/api/me/route.ts` — source / typescript
+- `apps/rowboat/app/api/composio/webhook/route.ts` — source / typescript
+- `apps/rowboat/app/api/twilio/utils.ts` — source / typescript
+- `apps/rowboat/app/api/twilio/inbound_call/route.ts` — source / typescript
+- `apps/rowboat/app/api/twilio/turn/[callSid]/route.ts` — source / typescript
+- `apps/rowboat/app/composio/oauth2/callback/page.tsx` — source / typescript
+- `apps/rowboat/app/billing/app.tsx` — source / typescript
+- `apps/rowboat/app/billing/layout.tsx` — source / typescript
+- `apps/rowboat/app/billing/page.tsx` — source / typescript
+- `apps/rowboat/app/billing/callback/page.tsx` — source / typescript
+- `apps/rowboat/app/onboarding/app.tsx` — source / typescript
+- `apps/rowboat/app/onboarding/layout.tsx` — source / typescript
+- `apps/rowboat/app/onboarding/page.tsx` — source / typescript
+- `apps/rowboat/components/ui/tabs.tsx` — source / typescript
+- `apps/rowboat/components/ui/page-heading.tsx` — source / typescript
+- `apps/rowboat/components/ui/resizable.tsx` — source / typescript
+- `apps/rowboat/components/ui/search-bar.tsx` — source / typescript
+- `apps/rowboat/components/ui/slide-panel.tsx` — source / typescript
+- `apps/rowboat/components/ui/switch.tsx` — source / typescript
+- `apps/rowboat/components/ui/dropdown.tsx` — source / typescript
+- `apps/rowboat/components/ui/picture-img.tsx` — source / typescript
+- `apps/rowboat/components/ui/progress-bar.tsx` — source / typescript
+- `apps/rowboat/components/ui/section-heading.tsx` — source / typescript
+- `apps/rowboat/components/ui/button.tsx` — source / typescript
+- `apps/rowboat/components/ui/page-header.tsx` — source / typescript
+- `apps/rowboat/components/ui/modal.tsx` — source / typescript
+- `apps/rowboat/components/ui/horizontal-divider.tsx` — source / typescript
+- `apps/rowboat/components/ui/textarea.tsx` — source / typescript
+- `apps/rowboat/components/ui/input.tsx` — source / typescript
+- `apps/rowboat/components/common/compose-box-playground.tsx` — source / typescript
+- `apps/rowboat/components/common/section-card.tsx` — source / typescript
+- `apps/rowboat/components/common/compose-box.tsx` — source / typescript
+- `apps/rowboat/components/common/copy-button.tsx` — source / typescript
+- `apps/rowboat/components/common/copy-as-json-button.tsx` — source / typescript
+- `apps/rowboat/components/common/product-tour.tsx` — source / typescript
+- `apps/rowboat/components/common/compose-box-copilot.tsx` — source / typescript
+- `apps/rowboat/components/common/AssistantCard.tsx` — source / typescript
+- `apps/rowboat/components/common/UnifiedTemplatesSection.tsx` — source / typescript
+- `apps/rowboat/components/common/AssistantSection.tsx` — source / typescript
+- `apps/rowboat/components/common/help-modal.tsx` — source / typescript
+- `apps/rowboat/components/common/billing-upgrade-modal.tsx` — source / typescript
+- `apps/rowboat/components/common/project-wide-change-confirmation-modal.tsx` — source / typescript
+- `apps/rowboat/components/common/panel-common.tsx` — source / typescript
+- `apps/rowboat/components/common/tool-param-card.tsx` — source / typescript
+- `apps/rowboat/public/dark-logo-only.png` — other
+- `apps/rowboat/public/dark-logo.png` — other
+- `apps/rowboat/public/logo-only.png` — other
+- `apps/rowboat/public/landing-bg.jpg` — other
+- `apps/rowboat/public/logo.png` — other
+- `apps/rowboat/public/mascot.png` — other
+- `apps/rowboat/public/mcp-server-images/klavis.webp` — other
+- `apps/rowboat/public/mcp-server-images/gmail.svg` — other
+- `apps/rowboat/public/mcp-server-images/supabase.svg` — other
+- `apps/rowboat/public/mcp-server-images/gdrive.svg` — other
+- `apps/rowboat/public/mcp-server-images/github.svg` — other
+- `apps/rowboat/public/mcp-server-images/postgres.svg` — other
+- `apps/rowboat/public/mcp-server-images/firecrawl.webp` — other
+- `apps/rowboat/public/mcp-server-images/notion.svg` — other
+- `apps/rowboat/public/mcp-server-images/resend.svg` — other
+- `apps/rowboat/public/mcp-server-images/jira.svg` — other
+- `apps/rowboat/public/mcp-server-images/gdocs.svg` — other
+- `apps/rowboat/public/mcp-server-images/markdown2doc.webp` — other
+- `apps/rowboat/public/mcp-server-images/gsheets.svg` — other
+- `apps/rowboat/public/mcp-server-images/youtube.svg` — other
+- `apps/rowboat/public/mcp-server-images/discord.svg` — other
+- `apps/rowboat/public/mcp-server-images/gcalendar.svg` — other
+- `apps/rowboat/public/mcp-server-images/slack.svg` — other
+- `apps/rowboat/public/mcp-server-images/wordpress.svg` — other
+- `apps/rowboat/public/mcp-server-images/doc2markdown.svg` — other
+- `apps/rowboat/hooks/use-click-away.ts` — source / typescript
+- `apps/rowboat/lib/utils.ts` — source / typescript
+- `apps/rowboat/lib/utils/date.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/recurring-job-rules/delete-recurring-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/recurring-job-rules/toggle-recurring-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/recurring-job-rules/update-recurring-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/recurring-job-rules/create-recurring-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/recurring-job-rules/fetch-recurring-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/recurring-job-rules/list-recurring-job-rules.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/copilot/create-copilot-cached-turn.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/copilot/run-copilot-cached-turn.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/add-custom-mcp-server.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/list-composio-tools.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/get-composio-toolkit.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/delete-project.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/list-projects.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/sync-connected-account.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/create-composio-managed-connected-account.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/update-draft-workflow.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/update-webhook-url.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/update-project-name.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/list-composio-toolkits.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/remove-custom-mcp-server.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/revert-to-live-workflow.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/delete-composio-connected-account.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/update-live-workflow.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/create-custom-connected-account.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/rotate-secret.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/create-project.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/projects/fetch-project.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/api-keys/create-api-key.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/api-keys/list-api-keys.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/api-keys/delete-api-key.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/scheduled-job-rules/create-scheduled-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/scheduled-job-rules/fetch-scheduled-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/scheduled-job-rules/update-scheduled-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/scheduled-job-rules/delete-scheduled-job-rule.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/scheduled-job-rules/list-scheduled-job-rules.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/conversations/run-turn.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/conversations/create-playground-conversation.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/conversations/run-cached-turn.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/conversations/fetch-conversation.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/conversations/list-conversations.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/conversations/create-cached-turn.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/composio-trigger-deployments/fetch-composio-trigger-deployment.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/composio-trigger-deployments/list-composio-trigger-deployments.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/composio-trigger-deployments/list-composio-trigger-types.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/composio-trigger-deployments/create-composio-trigger-deployment.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/composio-trigger-deployments/delete-composio-trigger-deployment.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/jobs/fetch-job.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/jobs/list-jobs.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/composio/webhook/handle-composio-webhook-request.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/list-docs-in-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/add-docs-to-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/get-download-url-for-file.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/list-data-sources.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/toggle-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/delete-doc-from-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/recrawl-web-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/fetch-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/update-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/delete-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/get-upload-urls-for-files.controller.ts` — source / typescript
+- `apps/rowboat/src/interface-adapters/controllers/data-sources/create-data-source.controller.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/jobs.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/projects.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/scheduled-job-rules.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/api-keys.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/conversations.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/recurring-job-rules.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/users.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/data-source-docs.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/composio-trigger-deployments.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/project-members.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/repositories/data-sources.repository.interface.ts` — source / typescript
+- `apps/rowboat/src/application/policies/project-action-authorization.policy.ts` — source / typescript
+- `apps/rowboat/src/application/policies/usage-quota.policy.interface.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/recurring-job-rules/update-recurring-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/recurring-job-rules/list-recurring-job-rules.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/recurring-job-rules/create-recurring-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/recurring-job-rules/delete-recurring-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/recurring-job-rules/toggle-recurring-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/recurring-job-rules/fetch-recurring-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/copilot/run-copilot-cached-turn.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/copilot/create-copilot-cached-turn.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/add-custom-mcp-server.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/create-composio-managed-connected-account.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/rotate-secret.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/get-composio-toolkit.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/update-project-name.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/delete-project.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/fetch-project.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/list-composio-toolkits.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/update-draft-workflow.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/remove-custom-mcp-server.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/create-project.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/revert-to-live-workflow.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/list-projects.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/sync-connected-account.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/create-custom-connected-account.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/list-composio-tools.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/update-webhook-url.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/update-live-workflow.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/projects/delete-composio-connected-account.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/api-keys/list-api-keys.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/api-keys/delete-api-key.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/api-keys/create-api-key.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/scheduled-job-rules/create-scheduled-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/scheduled-job-rules/update-scheduled-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/scheduled-job-rules/delete-scheduled-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/scheduled-job-rules/list-scheduled-job-rules.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/scheduled-job-rules/fetch-scheduled-job-rule.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/conversations/list-conversations.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/conversations/fetch-cached-turn.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/conversations/create-conversation.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/conversations/fetch-conversation.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/conversations/run-conversation-turn.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/conversations/create-cached-turn.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/composio-trigger-deployments/delete-composio-trigger-deployment.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/composio-trigger-deployments/fetch-composio-trigger-deployment.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/composio-trigger-deployments/list-composio-trigger-types.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/composio-trigger-deployments/create-composio-trigger-deployment.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/composio-trigger-deployments/list-composio-trigger-deployments.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/jobs/fetch-job.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/jobs/list-jobs.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/composio/webhook/handle-composio-webhook-request.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/recrawl-web-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/update-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/list-data-sources.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/list-docs-in-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/toggle-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/get-upload-urls-for-files.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/create-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/delete-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/delete-doc-from-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/add-docs-to-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/get-download-url-for-file.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/use-cases/data-sources/fetch-data-source.use-case.ts` — source / typescript
+- `apps/rowboat/src/application/lib/copilot/copilot_edit_agent.ts` — source / typescript
+- `apps/rowboat/src/application/lib/copilot/example_multi_agent_1.ts` — source / typescript
+- `apps/rowboat/src/application/lib/copilot/copilot_multi_agent.ts` — source / typescript
+- `apps/rowboat/src/application/lib/copilot/copilot.ts` — source / typescript
+- `apps/rowboat/src/application/lib/copilot/copilot_multi_agent_build.ts` — source / typescript
+- `apps/rowboat/src/application/lib/copilot/current_workflow.ts` — source / typescript
+- `apps/rowboat/src/application/lib/agents-runtime/pipeline-state-manager.ts` — source / typescript
+- `apps/rowboat/src/application/lib/agents-runtime/agent-handoffs.ts` — source / typescript
+- `apps/rowboat/src/application/lib/agents-runtime/agents.ts` — source / typescript
+- `apps/rowboat/src/application/lib/agents-runtime/agent-tools.ts` — source / typescript
+- `apps/rowboat/src/application/lib/agents-runtime/agent_instructions.ts` — source / typescript
+- `apps/rowboat/src/application/lib/utils/time-to-next-minute.ts` — source / typescript
+- `apps/rowboat/src/application/lib/utils/is-valid-cron-expression.ts` — source / typescript
+- `apps/rowboat/src/application/lib/composio/composio.ts` — source / typescript
+- `apps/rowboat/src/application/lib/composio/types.ts` — source / typescript
+- `apps/rowboat/src/application/workers/job-rules.worker.ts` — source / typescript
+- `apps/rowboat/src/application/workers/jobs.worker.ts` — source / typescript
+- `apps/rowboat/src/application/services/cache.service.interface.ts` — source / typescript
+- `apps/rowboat/src/application/services/uploads-storage.service.interface.ts` — source / typescript
+- `apps/rowboat/src/application/services/pub-sub.service.interface.ts` — source / typescript
+- `apps/rowboat/src/application/services/temp-binary-cache.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.data-source-docs.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.community-assistants.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.api-keys.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.composio-trigger-deployments.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.project-members.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.conversations.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.users.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.api-keys.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.conversations.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.projects.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.scheduled-job-rules.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.recurring-job-rules.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.projects.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.assistant-templates.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.data-source-docs.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.scheduled-job-rules.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.data-sources.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.shared-workflows.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.data-sources.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.jobs.repository.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.recurring-job-rules.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.composio-trigger-deployments.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.jobs.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.users.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/repositories/mongodb.project-members.indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/policies/redis.usage-quota.policy.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/mongodb/drop-indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/mongodb/ensure-indexes.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/services/local.uploads-storage.service.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/services/s3.uploads-storage.service.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/services/redis.cache.service.ts` — source / typescript
+- `apps/rowboat/src/infrastructure/services/redis.pub-sub.service.ts` — source / typescript
+- `apps/rowboat/src/entities/models/composio-trigger-type.ts` — source / typescript
+- `apps/rowboat/src/entities/models/project.ts` — source / typescript
+- `apps/rowboat/src/entities/models/composio-trigger-deployment.ts` — source / typescript
+- `apps/rowboat/src/entities/models/recurring-job-rule.ts` — source / typescript
+- `apps/rowboat/src/entities/models/data-source-doc.ts` — source / typescript
+- `apps/rowboat/src/entities/models/assistant-template.ts` — source / typescript
+- `apps/rowboat/src/entities/models/copilot.ts` — source / typescript
+- `apps/rowboat/src/entities/models/job.ts` — source / typescript
+- `apps/rowboat/src/entities/models/conversation.ts` — source / typescript
+- `apps/rowboat/src/entities/models/data-source.ts` — source / typescript
+- `apps/rowboat/src/entities/models/api-key.ts` — source / typescript
+- `apps/rowboat/src/entities/models/scheduled-job-rule.ts` — source / typescript
+- `apps/rowboat/src/entities/models/user.ts` — source / typescript
+- `apps/rowboat/src/entities/models/turn.ts` — source / typescript
+- `apps/rowboat/src/entities/models/project-member.ts` — source / typescript
+- `apps/rowboat/src/entities/common/paginated-list.ts` — source / typescript
+- `apps/rowboat/src/entities/errors/common.ts` — source / typescript
+- `apps/rowboat/src/entities/errors/job-errors.ts` — source / typescript
+- `apps/x/pnpm-lock.yaml` — config
+- `apps/x/tsconfig.base.json` — config
+- `apps/x/eslint.config.mts` — other
+- `apps/x/ANALYTICS.md` — doc
+- `apps/x/.gitignore` — other
+- `apps/x/package.json` — build
+- `apps/x/LIVE_NOTE.md` — doc
+- `apps/x/pnpm-workspace.yaml` — config
+- `apps/x/patches/@openai__codex@0.128.0.patch` — other
+- `apps/x/packages/core/.gitignore` — other
+- `apps/x/packages/core/package.json` — build
+- `apps/x/packages/core/tsconfig.build.json` — config
+- `apps/x/packages/core/tsconfig.json` — config
+- `apps/x/packages/core/vitest.config.ts` — source / typescript
+- `apps/x/packages/core/src/index.ts` — source / typescript
+- `apps/x/packages/core/src/migrations/composio-google-migration.ts` — source / typescript
+- `apps/x/packages/core/src/background-tasks/scheduler.ts` — source / typescript
+- `apps/x/packages/core/src/background-tasks/agent.ts` — source / typescript
+- `apps/x/packages/core/src/background-tasks/bus.ts` — source / typescript
+- `apps/x/packages/core/src/background-tasks/fileops.ts` — source / typescript
+- `apps/x/packages/core/src/background-tasks/event-consumer.ts` — source / typescript
+- `apps/x/packages/core/src/background-tasks/runner.ts` — source / typescript
+- `apps/x/packages/core/src/schedule/utils.ts` — source / typescript
+- `apps/x/packages/core/src/di/container.ts` — source / typescript
+- `apps/x/packages/core/src/agent-schedule/repo.ts` — source / typescript
+- `apps/x/packages/core/src/agent-schedule/state-repo.ts` — source / typescript
+- `apps/x/packages/core/src/agent-schedule/runner.ts` — source / typescript
+- `apps/x/packages/core/src/config/rowboat.ts` — source / typescript
+- `apps/x/packages/core/src/config/initConfigs.ts` — source / typescript
+- `apps/x/packages/core/src/config/remote-config.ts` — source / typescript
+- `apps/x/packages/core/src/config/strictness_analyzer.ts` — source / typescript
+- `apps/x/packages/core/src/config/user_config.ts` — source / typescript
+- `apps/x/packages/core/src/config/security.ts` — source / typescript
+- `apps/x/packages/core/src/config/note_creation_config.ts` — source / typescript
+- `apps/x/packages/core/src/config/env.ts` — source / typescript
+- `apps/x/packages/core/src/config/config.ts` — source / typescript
+- `apps/x/packages/core/src/security/auto-permission-classifier.ts` — source / typescript
+- `apps/x/packages/core/src/auth/google-backend-oauth.ts` — source / typescript
+- `apps/x/packages/core/src/auth/repo.ts` — source / typescript
+- `apps/x/packages/core/src/auth/provider-client-id.ts` — source / typescript
+- `apps/x/packages/core/src/auth/providers.ts` — source / typescript
+- `apps/x/packages/core/src/auth/types.ts` — source / typescript
+- `apps/x/packages/core/src/auth/tokens.ts` — source / typescript
+- `apps/x/packages/core/src/auth/client-repo.ts` — source / typescript
+- `apps/x/packages/core/src/auth/oauth-client.ts` — source / typescript
+- `apps/x/packages/core/src/local-sites/templates.ts` — source / typescript
+- `apps/x/packages/core/src/local-sites/server.ts` — source / typescript
+- `apps/x/packages/core/src/workspace/workspace.ts` — source / typescript
+- `apps/x/packages/core/src/workspace/wiki-link-rewrite.ts` — source / typescript
+- `apps/x/packages/core/src/workspace/watcher.ts` — source / typescript
+- `apps/x/packages/core/src/agents/repo.ts` — source / typescript
+- `apps/x/packages/core/src/agents/utils.ts` — source / typescript
+- `apps/x/packages/core/src/agents/runtime.ts` — source / typescript
+- `apps/x/packages/core/src/agents/build-trigger-block.ts` — source / typescript
+- `apps/x/packages/core/src/filesystem/files.test.ts` — test / typescript
+- `apps/x/packages/core/src/filesystem/files.ts` — source / typescript
+- `apps/x/packages/core/src/mcp/repo.ts` — source / typescript
+- `apps/x/packages/core/src/mcp/mcp.ts` — source / typescript
+- `apps/x/packages/core/src/models/defaults.ts` — source / typescript
+- `apps/x/packages/core/src/models/repo.ts` — source / typescript
+- `apps/x/packages/core/src/models/models-dev.ts` — source / typescript
+- `apps/x/packages/core/src/models/models.ts` — source / typescript
+- `apps/x/packages/core/src/models/gateway.ts` — source / typescript
+- `apps/x/packages/core/src/search/search.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/status.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/repo.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/types.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/index.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/acp/manager.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/acp/permission-registry.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/acp/claude-exec.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/acp/permission-broker.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/acp/agents.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/acp/types.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/acp/client.ts` — source / typescript
+- `apps/x/packages/core/src/code-mode/acp/session-store.ts` — source / typescript
+- `apps/x/packages/core/src/pre_built/meeting-prep.md` — doc
+- `apps/x/packages/core/src/pre_built/email-draft.md` — doc
+- `apps/x/packages/core/src/pre_built/types.ts` — source / typescript
+- `apps/x/packages/core/src/pre_built/index.ts` — source / typescript
+- `apps/x/packages/core/src/pre_built/config.ts` — source / typescript
+- `apps/x/packages/core/src/pre_built/runner.ts` — source / typescript
+- `apps/x/packages/core/src/voice/voice.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/agent_notes_agent.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/limit_event_items.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/file-lock.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/agent_notes.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/sync_calendar.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/note_tagging_agent.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/note_system.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/sync_gmail.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/tag_notes.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/agent_notes_state.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/classify_thread.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/welcome.md` — doc
+- `apps/x/packages/core/src/knowledge/notify_calendar_meetings.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/run_pipeline.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/note_tagging_state.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/inline_task_agent.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/summarize_meeting.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/tag_system.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/README.md` — doc
+- `apps/x/packages/core/src/knowledge/sync_fireflies.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/build_graph.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/labeling_state.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/label_emails.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/inline_tasks.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/version_history.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/note_creation.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/google-client-factory.test.ts` — test / typescript
+- `apps/x/packages/core/src/knowledge/graph_state.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/knowledge_index.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/fireflies-client-factory.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/sync_gmail.test.ts` — test / typescript
+- `apps/x/packages/core/src/knowledge/labeling_agent.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/google-client-factory.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/deprecate_today_note.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/granola/repo.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/granola/types.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/granola/index.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/granola/sync.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/chrome-extension/README.md` — doc
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/icon.png` — other
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/popup.js` — source / javascript
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/styles.css` — other
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/background.js` — source / javascript
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/popup.html` — other
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/manifest.json` — config
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/content.js` — source / javascript
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/icons/icon16.png` — other
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/icons/icon48.png` — other
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/icons/icon128.png` — other
+- `apps/x/packages/core/src/knowledge/chrome-extension/extension/icons/icon32.png` — other
+- `apps/x/packages/core/src/knowledge/chrome-extension/server/server.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/live-note/scheduler.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/live-note/agent.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/live-note/schedule-utils.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/live-note/bus.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/live-note/fileops.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/live-note/event-consumer.ts` — source / typescript
+- `apps/x/packages/core/src/knowledge/live-note/runner.ts` — source / typescript
+- `apps/x/packages/core/src/slack/repo.ts` — source / typescript
+- `apps/x/packages/core/src/slack/types.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/agent.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/runtime-context.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/instructions.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/index.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/draft-emails/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/create-presentations/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/app-navigation/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/background-task/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/doc-collab/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/deletion-guardrails/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/meeting-prep/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/notify-user/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/composio-integration/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/organize-files/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/web-search/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/builtin-tools/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/slack/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/live-note/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/code-with-agents/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/mcp-integration/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/assistant/skills/browser-control/skill.ts` — source / typescript
+- `apps/x/packages/core/src/application/notification/service.ts` — source / typescript
+- `apps/x/packages/core/src/application/browser-skills/loader.ts` — source / typescript
+- `apps/x/packages/core/src/application/browser-skills/index.ts` — source / typescript
+- `apps/x/packages/core/src/application/browser-skills/matcher.ts` — source / typescript
+- `apps/x/packages/core/src/application/lib/exec-tool.ts` — source / typescript
+- `apps/x/packages/core/src/application/lib/command-executor.ts` — source / typescript
+- `apps/x/packages/core/src/application/lib/id-gen.ts` — source / typescript
+- `apps/x/packages/core/src/application/lib/bus.ts` — source / typescript
+- `apps/x/packages/core/src/application/lib/builtin-tools.ts` — source / typescript
+- `apps/x/packages/core/src/application/lib/knowledge-note-style.ts` — source / typescript
+- `apps/x/packages/core/src/application/lib/parse-frontmatter.ts` — source / typescript
+- `apps/x/packages/core/src/application/lib/message-queue.ts` — source / typescript
+- `apps/x/packages/core/src/application/browser-control/service.ts` — source / typescript
+- `apps/x/packages/core/src/account/account.ts` — source / typescript
+- `apps/x/packages/core/src/composio/repo.ts` — source / typescript
+- `apps/x/packages/core/src/composio/types.ts` — source / typescript
+- `apps/x/packages/core/src/composio/client.ts` — source / typescript
+- `apps/x/packages/core/src/composio/index.ts` — source / typescript
+- `apps/x/packages/core/src/events/init.ts` — source / typescript
+- `apps/x/packages/core/src/events/routing.ts` — source / typescript
+- `apps/x/packages/core/src/events/consumer.ts` — source / typescript
+- `apps/x/packages/core/src/events/producer.ts` — source / typescript
+- `apps/x/packages/core/src/events/processor.ts` — source / typescript
+- `apps/x/packages/core/src/runs/runs.ts` — source / typescript
+- `apps/x/packages/core/src/runs/repo.ts` — source / typescript
+- `apps/x/packages/core/src/runs/lock.ts` — source / typescript
+- `apps/x/packages/core/src/runs/bus.ts` — source / typescript
+- `apps/x/packages/core/src/runs/abort-registry.ts` — source / typescript
+- `apps/x/packages/core/src/services/service_logger.ts` — source / typescript
+- `apps/x/packages/core/src/services/service_bus.ts` — source / typescript
+- `apps/x/packages/core/src/billing/billing.ts` — source / typescript
+- `apps/x/packages/core/src/analytics/usage.ts` — source / typescript
+- `apps/x/packages/core/src/analytics/identify.ts` — source / typescript
+- `apps/x/packages/core/src/analytics/posthog.ts` — source / typescript
+- `apps/x/packages/core/src/analytics/installation.ts` — source / typescript
+- `apps/x/packages/core/src/analytics/use_case.ts` — source / typescript
+- `apps/x/packages/shared/.gitignore` — other
+- `apps/x/packages/shared/package.json` — build
+- `apps/x/packages/shared/tsconfig.json` — config
+- `apps/x/packages/shared/src/inline-task.ts` — source / typescript
+- `apps/x/packages/shared/src/llm-step-events.ts` — source / typescript
+- `apps/x/packages/shared/src/bases.ts` — source / typescript
+- `apps/x/packages/shared/src/runs.ts` — source / typescript
+- `apps/x/packages/shared/src/service-events.ts` — source / typescript
+- `apps/x/packages/shared/src/blocks.ts` — source / typescript
+- `apps/x/packages/shared/src/workspace.ts` — source / typescript
+- `apps/x/packages/shared/src/rowboat-account.ts` — source / typescript
+- `apps/x/packages/shared/src/agent.ts` — source / typescript
+- `apps/x/packages/shared/src/prefix-logger.ts` — source / typescript
+- `apps/x/packages/shared/src/mcp.ts` — source / typescript
+- `apps/x/packages/shared/src/example.ts` — source / typescript
+- `apps/x/packages/shared/src/composio.ts` — source / typescript
+- `apps/x/packages/shared/src/agent-schedule.ts` — source / typescript
+- `apps/x/packages/shared/src/prompt-block.ts` — source / typescript
+- `apps/x/packages/shared/src/code-mode.ts` — source / typescript
+- `apps/x/packages/shared/src/message.ts` — source / typescript
+- `apps/x/packages/shared/src/events.ts` — source / typescript
+- `apps/x/packages/shared/src/browser-control.ts` — source / typescript
+- `apps/x/packages/shared/src/ipc.ts` — source / typescript
+- `apps/x/packages/shared/src/index.ts` — source / typescript
+- `apps/x/packages/shared/src/models.ts` — source / typescript
+- `apps/x/packages/shared/src/live-note.ts` — source / typescript
+- `apps/x/packages/shared/src/frontmatter.ts` — source / typescript
+- `apps/x/packages/shared/src/billing.ts` — source / typescript
+- `apps/x/packages/shared/src/background-task.ts` — source / typescript
+- `apps/x/packages/shared/src/agent-schedule-state.ts` — source / typescript
+- `apps/x/apps/renderer/tsconfig.node.json` — config
+- `apps/x/apps/renderer/index.html` — other
+- `apps/x/apps/renderer/tsconfig.app.json` — config
+- `apps/x/apps/renderer/README.md` — doc
+- `apps/x/apps/renderer/.gitignore` — other
+- `apps/x/apps/renderer/package.json` — build
+- `apps/x/apps/renderer/components.json` — config
+- `apps/x/apps/renderer/tsconfig.json` — config
+- `apps/x/apps/renderer/DESIGN_LANGUAGE.md` — doc
+- `apps/x/apps/renderer/eslint.config.js` — source / javascript
+- `apps/x/apps/renderer/vite.config.ts` — source / typescript
+- `apps/x/apps/renderer/public/logo-only.png` — other
+- `apps/x/apps/renderer/public/vite.svg` — other
+- `apps/x/apps/renderer/src/App.tsx` — source / typescript
+- `apps/x/apps/renderer/src/main.tsx` — source / typescript
+- `apps/x/apps/renderer/src/App.css` — other
+- `apps/x/apps/renderer/src/index.css` — other
+- `apps/x/apps/renderer/src/global.d.ts` — source / typescript
+- `apps/x/apps/renderer/src/contexts/sidebar-context.tsx` — source / typescript
+- `apps/x/apps/renderer/src/contexts/file-card-context.tsx` — source / typescript
+- `apps/x/apps/renderer/src/contexts/theme-context.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/image-upload.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/iframe-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/chart-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/email-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/embed-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/wiki-link.ts` — source / typescript
+- `apps/x/apps/renderer/src/extensions/calendar-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/image-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/transcript-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/prompt-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/mermaid-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/table-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/extensions/task-block.tsx` — source / typescript
+- `apps/x/apps/renderer/src/styles/live-note-panel.css` — other
+- `apps/x/apps/renderer/src/styles/editor.css` — other
+- `apps/x/apps/renderer/src/components/markdown-editor.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/video-file-viewer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/rowboat-mention-popover.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/knowledge-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/compact-conversation.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/docx-file-viewer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/chat-message-attachments.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/search-dialog.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/unsupported-file-viewer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/google-client-id-modal.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/composio-google-migration-modal.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/bases-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/home-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/mention-popover.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/bg-tasks-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/chat-empty-state.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/chat-history-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/pdf-file-viewer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/live-note-sidebar.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/tab-bar.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/frontmatter-properties.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/mermaid-renderer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/version-history-panel.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/billing-error-dialog.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/connectors-popover.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/terminal-output.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/image-file-viewer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/chat-input-with-mentions.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/email-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/live-notes-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/composio-api-key-modal.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/persistent-viewer-cache.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/chat-header.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/audio-file-viewer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/rich-markdown-viewer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/coding-run.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/meetings-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/editor-toolbar.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/suggested-topics-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/graph-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/chat-button.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/workspace-view.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/settings-dialog.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding-modal.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/html-file-viewer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/chat-sidebar.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/background-task-detail.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/sidebar-content.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/alert-dialog.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/button-group.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/input-group.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/popover.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/progress.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/hover-card.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/sheet.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/sonner.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/tooltip.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/switch.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/command.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/dialog.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/badge.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/sidebar.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/separator.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/button.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/collapsible.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/dropdown-menu.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/select.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/textarea.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/input.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/skeleton.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ui/context-menu.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/settings/connected-accounts-settings.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/settings/account-settings.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/browser-pane/BrowserPane.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/permission-request.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/suggestions.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/reasoning.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/tool.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/app-action-card.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/shimmer.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/markdown-code-override.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/prompt-input.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/file-path-card.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/conversation.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/web-search-result.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/composio-connect-card.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/context.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/auto-permission-decision.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/message.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/ai-elements/ask-human-request.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding/step-indicator.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding/index.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding/use-onboarding-state.ts` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding/provider-icons.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding/steps/welcome-step.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding/steps/connect-accounts-step.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding/steps/completion-step.tsx` — source / typescript
+- `apps/x/apps/renderer/src/components/onboarding/steps/llm-setup-step.tsx` — source / typescript
+- `apps/x/apps/renderer/src/hooks/use-debounce.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useConnectors.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/use-live-note-agent-status.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useOAuth.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/use-mobile.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useVoiceMode.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/use-bg-task-agent-status.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useVoiceTTS.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useRowboatAccount.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/use-live-note-for-path.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/use-mention-detection.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useBilling.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useAnalyticsIdentity.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useSmoothedText.ts` — source / typescript
+- `apps/x/apps/renderer/src/hooks/useMeetingTranscription.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/deepgram-listen-url.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/terminal-output.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/mention-files.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/textarea-caret.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/file-types.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/analytics.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/toast.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/billing-error.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/utils.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/attachment-presentation.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/chat-conversation.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/run-to-conversation.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/relative-time.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/google-credentials-store.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/mention-highlights.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/file-utils.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/wiki-links.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/frontmatter.ts` — source / typescript
+- `apps/x/apps/renderer/src/lib/calendar-event.ts` — source / typescript
+- `apps/x/apps/renderer/src/assets/react.svg` — other
+- `apps/x/apps/main/forge.config.cjs` — other
+- `apps/x/apps/main/entitlements.plist` — other
+- `apps/x/apps/main/.gitignore` — other
+- `apps/x/apps/main/package.json` — build
+- `apps/x/apps/main/tsconfig.json` — config
+- `apps/x/apps/main/bundle.mjs` — other
+- `apps/x/apps/main/icons/icon.png` — other
+- `apps/x/apps/main/icons/icon.icns` — other
+- `apps/x/apps/main/icons/icon.ico` — other
+- `apps/x/apps/main/src/composio-handler.ts` — source / typescript
+- `apps/x/apps/main/src/main.ts` — source / typescript
+- `apps/x/apps/main/src/html-to-docx.d.ts` — source / typescript
+- `apps/x/apps/main/src/test-agent.ts` — source / typescript
+- `apps/x/apps/main/src/oauth-handler.ts` — source / typescript
+- `apps/x/apps/main/src/deeplink.ts` — source / typescript
+- `apps/x/apps/main/src/ipc.ts` — source / typescript
+- `apps/x/apps/main/src/auth-server.ts` — source / typescript
+- `apps/x/apps/main/src/notification/electron-notification-service.ts` — source / typescript
+- `apps/x/apps/main/src/browser/navigation.ts` — source / typescript
+- `apps/x/apps/main/src/browser/page-scripts.ts` — source / typescript
+- `apps/x/apps/main/src/browser/view.ts` — source / typescript
+- `apps/x/apps/main/src/browser/ipc.ts` — source / typescript
+- `apps/x/apps/main/src/browser/control-service.ts` — source / typescript
+- `apps/x/apps/preload/.gitignore` — other
+- `apps/x/apps/preload/package.json` — build
+- `apps/x/apps/preload/tsconfig.json` — config
+- `apps/x/apps/preload/src/preload.ts` — source / typescript
+- `apps/rowboatx/postcss.config.mjs` — other
+- `apps/rowboatx/README.md` — doc
+- `apps/rowboatx/.gitignore` — other
+- `apps/rowboatx/package-lock.json` — config
+- `apps/rowboatx/package.json` — build
+- `apps/rowboatx/global.d.ts` — source / typescript
+- `apps/rowboatx/components.json` — config
+- `apps/rowboatx/tsconfig.json` — config
+- `apps/rowboatx/eslint.config.mjs` — other
+- `apps/rowboatx/next.config.ts` — source / typescript
+- `apps/rowboatx/types/turndown.d.ts` — source / typescript
+- `apps/rowboatx/app/favicon.ico` — other
+- `apps/rowboatx/app/layout.tsx` — source / typescript
+- `apps/rowboatx/app/page.tsx` — source / typescript
+- `apps/rowboatx/app/globals.css` — other
+- `apps/rowboatx/components/team-switcher.tsx` — source / typescript
+- `apps/rowboatx/components/tiptap-markdown-editor.tsx` — source / typescript
+- `apps/rowboatx/components/nav-main.tsx` — source / typescript
+- `apps/rowboatx/components/tiptap-markdown-editor.css` — other
+- `apps/rowboatx/components/nav-user.tsx` — source / typescript
+- `apps/rowboatx/components/app-sidebar.tsx` — source / typescript
+- `apps/rowboatx/components/markdown-viewer.tsx` — source / typescript
+- `apps/rowboatx/components/json-editor.tsx` — source / typescript
+- `apps/rowboatx/components/json-editor.css` — other
+- `apps/rowboatx/components/markdown-viewer.css` — other
+- `apps/rowboatx/components/nav-projects.tsx` — source / typescript
+- `apps/rowboatx/components/ui/button-group.tsx` — source / typescript
+- `apps/rowboatx/components/ui/card.tsx` — source / typescript
+- `apps/rowboatx/components/ui/input-group.tsx` — source / typescript
+- `apps/rowboatx/components/ui/progress.tsx` — source / typescript
+- `apps/rowboatx/components/ui/hover-card.tsx` — source / typescript
+- `apps/rowboatx/components/ui/sheet.tsx` — source / typescript
+- `apps/rowboatx/components/ui/scroll-area.tsx` — source / typescript
+- `apps/rowboatx/components/ui/tooltip.tsx` — source / typescript
+- `apps/rowboatx/components/ui/alert.tsx` — source / typescript
+- `apps/rowboatx/components/ui/breadcrumb.tsx` — source / typescript
+- `apps/rowboatx/components/ui/command.tsx` — source / typescript
+- `apps/rowboatx/components/ui/avatar.tsx` — source / typescript
+- `apps/rowboatx/components/ui/dialog.tsx` — source / typescript
+- `apps/rowboatx/components/ui/badge.tsx` — source / typescript
+- `apps/rowboatx/components/ui/sidebar.tsx` — source / typescript
+- `apps/rowboatx/components/ui/separator.tsx` — source / typescript
+- `apps/rowboatx/components/ui/button.tsx` — source / typescript
+- `apps/rowboatx/components/ui/collapsible.tsx` — source / typescript
+- `apps/rowboatx/components/ui/dropdown-menu.tsx` — source / typescript
+- `apps/rowboatx/components/ui/select.tsx` — source / typescript
+- `apps/rowboatx/components/ui/textarea.tsx` — source / typescript
+- `apps/rowboatx/components/ui/input.tsx` — source / typescript
+- `apps/rowboatx/components/ui/skeleton.tsx` — source / typescript
+- `apps/rowboatx/components/ui/carousel.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/sources.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/checkpoint.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/edge.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/reasoning.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/tool.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/inline-citation.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/connection.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/loader.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/model-selector.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/confirmation.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/toolbar.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/task.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/suggestion.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/queue.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/shimmer.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/prompt-input.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/panel.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/conversation.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/node.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/web-preview.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/artifact.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/context.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/chain-of-thought.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/open-in-chat.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/code-block.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/plan.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/message.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/canvas.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/image.tsx` — source / typescript
+- `apps/rowboatx/components/ai-elements/controls.tsx` — source / typescript
+- `apps/rowboatx/public/file.svg` — other
+- `apps/rowboatx/public/vercel.svg` — other
+- `apps/rowboatx/public/next.svg` — other
+- `apps/rowboatx/public/globe.svg` — other
+- `apps/rowboatx/public/window.svg` — other
+- `apps/rowboatx/hooks/use-mobile.ts` — source / typescript
+- `apps/rowboatx/lib/utils.ts` — source / typescript
